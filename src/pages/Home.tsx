@@ -4,15 +4,16 @@ gsap.registerPlugin(ScrollTrigger);
 import animationData from "../assets/animation_lnc3zwzx.json";
 // import Lottie from "lottie-react";
 import lottie from "lottie-web";
-import React from "react";
+import { useRef, useEffect } from "react";
 
 
 
 const Home = () => {
-  const lottieRef = React.useRef<HTMLDivElement>(null);
+  const lottieRef = useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
-    var animDuration = 10000;
+
+  useEffect(() => {
+    // var animDuration = 10000;
     const anim = lottie.loadAnimation({
       container: lottieRef.current!,
       renderer: "svg",
@@ -22,41 +23,43 @@ const Home = () => {
       animationData
     });
 
-    function animatebodymovin(duration: number) {
-      const scrollPosition = window.scrollY;
+    function animatebodymovin(duration: number,scrollPosition: number) {
       const maxFrames = anim.totalFrames;
 
       const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
+      // console.log(`${maxFrames} / 100) * (${scrollPosition} / (${duration} / 100)`);
 
       anim.goToAndStop(frame, true);
     }
-
-    /* -------------------------- simple onscoll event -------------------------- */
-    const onScroll = () => {
-      console.log("Scrolling");
-      animatebodymovin(animDuration);
-    };
-
-    /* ------------------- adding event listener to lottie div ------------------ */
-    document.addEventListener("scroll", onScroll);
+        gsap.to(".card-woman", {
+          scrollTrigger: {
+            trigger: "#red-trigger",
+            start: "top top",
+            end: "bottom 10%",
+            onUpdate: self => {console.log("progress:", self.progress);
+            animatebodymovin(10000,self.progress * 10000);},
+            toggleActions: "play none none none",
+            scrub: 2,
+            markers: true,
+          },
+          scrub: true,
+        });
 
     return () => {
       anim.destroy();
-      /* ----------------- removing event listener from lottie div ---------------- */
-      document.removeEventListener("scroll", onScroll);
     };
   }, []);
 
   return (
     <>
-      <div className="bg-red-700 h-60 w-40" >Home</div>
-        {/* <Lottie animationData={ContactUsLottie} loop={true} className="h-12 w-40"/> */}
+      <div className="bg-red-700 h-60 w-40" id="red-trigger">Home</div>
       <div>
-        {/* <Lottie className="lottie-ref" animationData={heroLottie} /> */}
       </div>
-      <div className="h-200" ref={lottieRef}></div>
-      <div className="h-screen">hello</div>
-      <div className="h-screen">hello</div>
+      <div className="absolute top-66">
+      <div className="h-40 relative top-0 right-0" ref={lottieRef}></div>
+      </div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
     </>
   );
 }
