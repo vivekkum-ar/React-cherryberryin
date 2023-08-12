@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CarbonQuotes, CreateRoundedIcon, HomeRoundedIcon, LaptopIcon, MenuIcon, PersonIcon, PhoneRoundedIcon, PricingIcon } from "./iconify";
+import { HomeRoundedIcon, LaptopIcon, MenuIcon, PersonIcon, PhoneRoundedIcon, PricingIcon } from "./iconify";
 import Lottie from "lottie-react";
 import ContactUsLottie from "../assets/animation_ln5ztpue.json";
 
@@ -7,7 +7,7 @@ import ContactUsLottie from "../assets/animation_ln5ztpue.json";
 const Navbar = () => {
     const [isDropdownvisible, setDropdownvisible] = useState(false);
     return (
-    <nav className="bg-white border-b-2 border-gray-300 dark:bg-gray-900">
+    <nav className="nav-trigger bg-white border-b-2 border-gray-300 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between md:justify-center mx-auto px-4 py-1">
           <a href="/" className="flex items-center">
             <div className="flex m-0 p-0">
