@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { HomeRoundedIcon, LaptopIcon, MenuIcon, PersonIcon, PhoneRoundedIcon, PricingIcon } from "./iconify";
 import Lottie from "lottie-react";
+// import lottie from "lottie-web";
+import { useRef } from "react";
 import ContactUsLottie from "../assets/animation_ln5ztpue.json";
 
 
 const Navbar = () => {
+  const lottieRef = useRef(null); 
     const [isDropdownvisible, setDropdownvisible] = useState(false);
     return (
     <nav className="nav-trigger bg-white border-b-2 border-gray-300 dark:bg-gray-900">
@@ -26,9 +29,6 @@ const Navbar = () => {
             </svg>
           </button> */}
           {/* <div className="hidden w-full md:block md:w-auto" id="navbar-default"> */}
-            
-
-
                 {/* <ul> */}
               {/* <li> */}
         {/*  */}
@@ -89,7 +89,35 @@ const Navbar = () => {
                 </ul>
 
                 <a href="#" className="hidden md:block">
-        <Lottie animationData={ContactUsLottie} loop={true} className="h-12 w-40 absolute right-0 top-0 mt-1 me-2"/>
+        <Lottie lottieRef={lottieRef} animationData={ContactUsLottie} 
+        onDOMLoaded = {() => {
+          if (lottieRef.current) {
+            const currentLottie = lottieRef.current as any;
+            currentLottie.goToAndStop(0,true);
+          }
+        }} loop={true} 
+        
+        onMouseEnter={() => {
+          if (lottieRef.current) {
+            const currentLottie = lottieRef.current as any;
+            currentLottie.play();
+          }
+        }} 
+        
+        onMouseLeave={() => {
+          if (lottieRef.current) {
+            const currentLottie = lottieRef.current as any;
+            currentLottie.goToAndStop(0,true);
+          }
+        }}
+        
+        // onMouseDown={() => {
+        //   if(lottieRef.current) {
+        //     const currentLottie = lottieRef.current as any;
+        //     currentLottie.goToAndStop(0,true);
+        //   }
+        // }} 
+      className="h-12 w-40 absolute right-0 top-0 mt-1 me-2"/>
         </a>
       </nav>
   )
