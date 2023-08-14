@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import animationData from "../assets/animation_lnc3zwzx.json";
+import animationData from "../assets/animation_lo8jcqf0.json";
 import lottie from "lottie-web";
 import { useRef, useEffect } from "react";
 
@@ -27,17 +27,19 @@ const Home = () => {
 
       anim.goToAndStop(frame, true);
     }
+    /* ------------------------- initializing animation ------------------------- */
+    anim.goToAndStop(7.5,true);
     gsap.to(".card-woman", {
       scrollTrigger: {
         trigger: "#red-trigger",
-        start: "top top",
+        start: "top+=5% top",
         end: "bottom 20%",
         onUpdate: (self) => {
           console.log("progress:", self.progress);
           animatebodymovin(1000, self.progress * 1000);
         },
         toggleActions: "play none none none",
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -45,12 +47,12 @@ const Home = () => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".lottie-trigger",
-        start: "top top",
+        start: "top-=10% top",
         end: "bottom-=50% 20%",
         toggleActions: "play none none none",
         // markers: true,
         scrub:true,
-        pin:true,
+        // pin:true,
       },
     });
     tl.to(".para-1", {opacity: 0,x:20});
@@ -59,10 +61,10 @@ const Home = () => {
     let tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".trigger-main",
-        start: "top-=20% top",
+        start: "top top",
         end: "bottom+=50% 20%",
         toggleActions: "play none none none",
-        markers: true,
+        // markers: true,
         scrub:true,
         // pin:true,
       },
@@ -76,15 +78,32 @@ const Home = () => {
         stagger: 0.1, // Delay between each word animation
       }
       );
+      let tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".build-animate",
+        start: "top bottom",
+          end: "top center",
+        toggleActions: "play none none none",
+        markers: true,
+        scrub:true,
+        // pin:true,
+      },
+    });
+      tl3.from(".build-animate",{
+        opacity: 0, 
+        x: -100, 
+        // duration: 1,
+      })
 
-    return () => {
-      anim.destroy();
-    };
+      return () => {
+        anim.destroy();
+      };
   }, []);
 
   return (
     <>
-    <section className="bg-white dark:bg-gray-900">
+      
+      <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col justify-center">
             <h1 className="trigger-main mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry🍒</span></h1>
@@ -106,19 +125,27 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       {/* <div className="bg-red-700 h-60 w-40 font-bold absolute top-8 overflow-x-hidden" id="red-trigger">
         Trigger
       </div> */}
-      <div className="border-2 w-full top-66 flex flex-row px-32 items-center justify-center lottie-trigger">
-        <div className="h-[500px] grow" ref={lottieRef}></div>
-        <div className="border-red-500 border-2 h-fit">
-          <p className="absolute text-grey-900 font-bold text-7xl border-2 ps-12 para-1">
+      <div className="bg-white dark:bg-gray-900 w-full top-66 flex flex-row px-32 items-center justify-center lottie-trigger">
+        <div className="h-[500px] grow lottie-were-cb" ref={lottieRef}></div>
+        <div className=" h-fit">
+          <p className="absolute text-grey-900 dark:text-white font-bold text-7xl ps-12 para-1  overflow-hidden">
             Envision, Engage, Excel.
           </p>
-          <p className="relative text-grey-900 font-bold text-7xl border-2 ps-12 para-2 opacity-0">
-            We are CherryBerry
+          <p className="relative pb-3 text-grey-900 font-bold dark:text-white text-7xl ps-12 para-2 opacity-0  overflow-hidden">
+            We are CherryBerry👋
           </p>
         </div>
+      </div>
+      <div className="flex place-content-center bg-gray-900">
+        {/* <div className="build-animate-trigger absolute border-lg border-red-500">
+        </div> */}
+        <p className="my-5 text-center build-animate dark:text-white mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white pb-3 overflow-hidden">
+          Website that grows with your business
+        </p>
       </div>
 
       <div className="h-96"></div>
