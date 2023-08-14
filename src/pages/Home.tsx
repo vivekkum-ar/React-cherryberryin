@@ -48,13 +48,34 @@ const Home = () => {
         start: "top top",
         end: "bottom-=50% 20%",
         toggleActions: "play none none none",
-        markers: true,
+        // markers: true,
         scrub:true,
         pin:true,
       },
     });
     tl.to(".para-1", {opacity: 0,x:20});
     tl.to(".para-2", {opacity: 1,x:20,});
+
+    let tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".trigger-main",
+        start: "top-=20% top",
+        end: "bottom+=50% 20%",
+        toggleActions: "play none none none",
+        markers: true,
+        scrub:true,
+        // pin:true,
+      },
+    });
+    tl2.fromTo(
+      ".one-by-one",
+      { color: 'white' }, // Start with grey text color
+      {
+        color: 'grey', // End with white text color
+        duration: 1, // Animation duration in seconds
+        stagger: 0.1, // Delay between each word animation
+      }
+      );
 
     return () => {
       anim.destroy();
