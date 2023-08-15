@@ -5,10 +5,43 @@ import animationData from "../assets/animation_lo8jcqf0.json";
 import lottie from "lottie-web";
 import { useRef, useEffect } from "react";
 
-const Home = () => {
+interface HomeProps {
+  // Add your prop types here
+  theme : String;
+  updateTheme : Function;
+}
+const Home: React.FC<HomeProps> = ({theme}) => {
+  
+  useEffect(() => {
+    let tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".trigger-main",
+        start: "top top",
+        end: "bottom+=50% 20%",
+        toggleActions: "play none none none",
+        // markers: true,
+        scrub:true,
+        // pin:true,
+      },
+    });
+    tl2.fromTo(
+      ".one-by-one",
+      { color: theme == "dark" ? 'white' : 'black' }, // Start with grey text color
+      {
+        color: 'grey', // End with white text color
+        duration: 1, // Animation duration in seconds
+        stagger: 0.1, // Delay between each word animation
+      }
+      );
+      
+    // console.log("changed to:",theme);
+  }, [theme])
+  
+
   const lottieRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let mm = gsap.matchMedia();
     // var animDuration = 10000;
     const anim = lottie.loadAnimation({
       container: lottieRef.current!,
@@ -43,7 +76,7 @@ const Home = () => {
       },
     });
 
-    
+    mm.add("(min-width: 768px)", () => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".lottie-trigger",
@@ -58,42 +91,30 @@ const Home = () => {
     tl.to(".para-1", {opacity: 0,x:20});
     tl.to(".para-2", {opacity: 1,x:20,});
 
-    let tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".trigger-main",
-        start: "top top",
-        end: "bottom+=50% 20%",
-        toggleActions: "play none none none",
-        // markers: true,
-        scrub:true,
-        // pin:true,
-      },
+    // let tl2 = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".trigger-main",
+    //     start: "top top",
+    //     end: "bottom+=50% 20%",
+    //     toggleActions: "play none none none",
+    //     // markers: true,
+    //     scrub:true,
+    //     // pin:true,
+    //   },
+    // });
+    // tl2.fromTo(
+    //   ".one-by-one",
+    //   { color: theme == "dark" ? 'white' : 'black' }, // Start with grey text color
+    //   {
+    //     color: 'grey', // End with white text color
+    //     duration: 1, // Animation duration in seconds
+    //     stagger: 0.1, // Delay between each word animation
+    //   }
+    //   );
+
+
+    
     });
-    tl2.fromTo(
-      ".one-by-one",
-      { color: 'white' }, // Start with grey text color
-      {
-        color: 'grey', // End with white text color
-        duration: 1, // Animation duration in seconds
-        stagger: 0.1, // Delay between each word animation
-      }
-      );
-      let tl3 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".build-animate",
-        start: "top bottom",
-          end: "top center",
-        toggleActions: "play none none none",
-        markers: true,
-        scrub:true,
-        // pin:true,
-      },
-    });
-      tl3.from(".build-animate",{
-        opacity: 0, 
-        x: -100, 
-        // duration: 1,
-      })
 
       return () => {
         anim.destroy();
@@ -106,7 +127,7 @@ const Home = () => {
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col justify-center">
-            <h1 className="trigger-main mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry🍒</span></h1>
+            <h1 className="trigger-main mb-4 text-4xl font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry🍒</span></h1>
             <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
               <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
@@ -140,10 +161,10 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="flex place-content-center bg-gray-900">
+      <div className="flex place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         {/* <div className="build-animate-trigger absolute border-lg border-red-500">
         </div> */}
-        <p className="my-5 text-center build-animate dark:text-white mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white pb-3 overflow-hidden">
+        <p className="my-5 text-center build-animate dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
           Website that grows with your business
         </p>
       </div>
