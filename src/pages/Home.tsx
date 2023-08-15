@@ -114,6 +114,22 @@ const Home: React.FC<HomeProps> = ({theme}) => {
 
 
     
+      let tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".build-animate",
+        start: "top bottom",
+          end: "top center",
+        toggleActions: "play none none none",
+        // markers: true,
+        // scrub:true,
+        // pin:true,
+      },
+    });
+      tl3.from(".build-animate",{
+        opacity: 0, 
+        y: "100px", 
+        // duration: 1,
+      })
     });
 
       return () => {
