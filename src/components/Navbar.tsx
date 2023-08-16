@@ -4,6 +4,9 @@ import Lottie from "lottie-react";
 // import lottie from "lottie-web";
 import { useRef } from "react";
 import ContactUsLottie from "../assets/animation_ln5ztpue.json";
+import 'animate.css';
+import '@fontsource/pacifico';
+
 
 interface navbarProps {
   // Add your prop types here
@@ -13,7 +16,7 @@ interface navbarProps {
 const Navbar: React.FC<navbarProps> = ({theme,updateTheme}) => {
   const lottieRef = useRef(null);
   const [isDropdownvisible, setDropdownvisible] = useState(false);
-  
+
   useEffect(() => {
     if (theme == "dark") {
       document.documentElement.classList.add("dark");
@@ -24,18 +27,30 @@ const Navbar: React.FC<navbarProps> = ({theme,updateTheme}) => {
     // return () => {
     //   second
     // }
-  }, [theme])
+  }, [theme]);
+
+  const [rotateClass, setRotateClass] = useState('');
+
+  const handleButtonClick = () => {
+    theme === 'dark' ? updateTheme('light') : updateTheme('dark');
+    setRotateClass('animate__rotateIn');
+
+    // Optionally, remove the rotate class after the animation completes
+    setTimeout(() => {
+      setRotateClass('');
+    }, 1000); // Adjust the duration based on your animation duration
+  };
 
 
   return (
-    <nav className="nav-trigger bg-white border-b-2 border-gray-300 dark:bg-gray-900">
+    <nav className="nav-trigger bg-gray-900 border-b-2 dark:border-gray-300 border-gray-500 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between md:justify-center mx-auto px-4 py-1">
         <a href="/" className="flex items-center">
           <div className="flex m-0 p-0">
             <img src="/images/logo.png" className="h-12 mr-3" alt="cherry-berry.in Logo" />
             <div className="flex flex-col">
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CherryBerry.in</span>
-              <span className="mt-1/4 self-center text-xs font-light whitespace-nowrap dark:text-white">Empowering Your Brand Online</span>
+              <span className="self-center text-2xl font-light pb-1 whitespace-nowrap text-white font-pacifico overflow-hidden">CherryBerry.in</span>
+              <span className="mt-1/4 self-center text-xs font-light whitespace-nowrap text-white">Empowering Your Brand Online</span>
             </div>
           </div>
 
@@ -91,26 +106,26 @@ const Navbar: React.FC<navbarProps> = ({theme,updateTheme}) => {
         </div>
       </div>
 
-      <ul className="flex items-center h-14 ms-4 absolute top-0 font-medium text-sm hidden md:flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-4 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <ul className="flex items-center h-14 ms-4 absolute top-0 font-medium text-sm hidden md:flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-900 md:flex-row md:space-x-4 md:mt-0 md:border-0 md:bg-gray-900 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Home</a>
+          <a href="#" className="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Home</a>
         </li>
         <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+          <a href="#" className="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
         </li>
         <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+          <a href="#" className="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
         </li>
         <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          <a href="#" className="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
         </li>
         <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          <a href="#" className="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:focus:text-red-700 md:p-0 text-white md:dark:hover:text-red-500 md:dark:focus:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
         </li>
       </ul>
 
       {/* ------------------------------ Theme Switch Button ------------------------------ */}
-      <button type="button" onClick={() => { theme == "dark" ? updateTheme("light") : updateTheme("dark") }} className="absolute top-2 right-52 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-full text-sm px-1.5 py-1.5 text-center me-2 mb-2">{theme == "light" ? DarkModeIcon : LightModeIcon}</button>
+      <button type="button" onClick={handleButtonClick} className={`animate__animated animate__faster ${rotateClass} absolute top-2 right-52 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br font-medium rounded-full text-sm px-1.5 py-1.5 text-center me-2 mb-2 `}>{theme == "light" ? DarkModeIcon : LightModeIcon}</button>
 
       {/* ---------------------- Animated Get-in-touch button ---------------------- */}
       <a href="#" className="hidden md:block">

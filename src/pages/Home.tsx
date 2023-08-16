@@ -26,11 +26,11 @@ const Home: React.FC<HomeProps> = ({theme}) => {
     });
     tl2.fromTo(
       ".one-by-one",
-      { color: theme == "dark" ? 'white' : 'black' }, // Start with grey text color
+      { color: theme != "dark" ? 'black':'white' }, // Start with grey text color
       {
-        color: 'grey', // End with white text color
+        color: "grey", // End with white text color
         duration: 1, // Animation duration in seconds
-        stagger: 0.1, // Delay between each word animation
+        stagger: 0.5, // Delay between each word animation
       }
       );
       
@@ -177,7 +177,7 @@ const Home: React.FC<HomeProps> = ({theme}) => {
           </p>
         </div>
       </div>
-      <div className="flex place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+      <div className="border-2 border-red-500 flex place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         {/* <div className="build-animate-trigger absolute border-lg border-red-500">
         </div> */}
         <p className="my-5 text-center build-animate dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
