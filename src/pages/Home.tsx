@@ -4,6 +4,9 @@ gsap.registerPlugin(ScrollTrigger);
 import animationData from "../assets/animation_lo8jcqf0.json";
 import lottie from "lottie-web";
 import { useRef, useEffect } from "react";
+// Supports weights 400-700
+import '@fontsource-variable/brygada-1918';
+
 
 interface HomeProps {
   // Add your prop types here
@@ -143,8 +146,8 @@ const Home: React.FC<HomeProps> = ({theme}) => {
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col justify-center">
-            <h1 className="trigger-main mb-4 text-4xl font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry🍒</span></h1>
-            <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
+            <h1 className="trigger-main font-bg mb-4 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-black dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry <img src="/images/logo.png" className="inline-block h-10 md:h-16 mr-3" alt="cherry-berry.in Logo" /> </span></h1>
+            <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
               <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                 Contact us
@@ -166,13 +169,13 @@ const Home: React.FC<HomeProps> = ({theme}) => {
       {/* <div className="bg-red-700 h-60 w-40 font-bold absolute top-8 overflow-x-hidden" id="red-trigger">
         Trigger
       </div> */}
-      <div className="bg-white dark:bg-gray-900 w-full top-66 flex flex-row px-32 items-center justify-center lottie-trigger">
+      <div className="bg-white dark:bg-gray-900 w-full top-66 flex flex-col-reverse md:flex-row md:px-32 items-center justify-center lottie-trigger">
         <div className="h-[500px] grow lottie-were-cb" ref={lottieRef}></div>
-        <div className=" h-fit">
-          <p className="absolute text-grey-900 dark:text-white font-bold text-7xl ps-12 para-1  overflow-hidden">
+        <div className="h-fit">
+          <p className="absolute text-4xl md:text-5xl lg:text-7xl font-bg text-grey-900 dark:text-white font-bold md:ps-12 para-1 overflow-hidden text-center">
             Envision, Engage, Excel.
           </p>
-          <p className="relative pb-3 text-grey-900 font-bold dark:text-white text-7xl ps-12 para-2 opacity-0  overflow-hidden">
+          <p className="relative pb-3 font-bg text-grey-900 font-bold dark:text-white text-4xl md:text-5xl lg:text-7xl ps-12 para-2 opacity-0  overflow-hidden">
             We are CherryBerry👋
           </p>
         </div>
@@ -180,7 +183,7 @@ const Home: React.FC<HomeProps> = ({theme}) => {
       <div className="border-2 border-red-500 flex place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         {/* <div className="build-animate-trigger absolute border-lg border-red-500">
         </div> */}
-        <p className="my-5 text-center build-animate dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
+        <p className="my-5 font-bg text-center build-animate dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
           Website that grows with your business
         </p>
       </div>
