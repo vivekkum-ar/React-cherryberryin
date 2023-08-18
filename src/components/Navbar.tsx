@@ -69,7 +69,7 @@ const Navbar: React.FC<navbarProps> = ({theme,updateTheme}) => {
         {/* </ul> */}
         {/* </div> */}
         <div className="flex items-center md:hidden">
-          <button type="button" onClick={() => { setDropdownvisible(!isDropdownvisible); }} className="flex mr-3 z-60 text-sm text-black dark:text-white md:mr-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+          <button type="button" onClick={() => { setDropdownvisible(!isDropdownvisible); }} className="flex mr-3 z-60 text-sm text-white md:mr-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
             <span className="sr-only">Open user menu</span>
             {/* <img className="w-8   h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo" /> */}
             {MenuIcon}
@@ -125,7 +125,7 @@ const Navbar: React.FC<navbarProps> = ({theme,updateTheme}) => {
       </ul>
 
       {/* ------------------------------ Theme Switch Button ------------------------------ */}
-      <button type="button" onClick={handleButtonClick} className={`animate__animated animate__faster ${rotateClass} absolute top-3 md:right-52 right-0 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br font-medium rounded-full text-sm px-1.5 py-1.5 text-center me-2 mb-2 `}>{theme == "light" ? DarkModeIcon : LightModeIcon}</button>
+      <button type="button" onClick={handleButtonClick} className={`animate__animated animate__faster ${rotateClass} absolute top-3 md:right-52 right-14 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br font-medium rounded-full text-sm px-1.5 py-1.5 text-center me-2 mb-2 `}>{theme == "light" ? DarkModeIcon : LightModeIcon}</button>
 
       {/* ---------------------- Animated Get-in-touch button ---------------------- */}
       <a href="#" className="hidden md:block">
