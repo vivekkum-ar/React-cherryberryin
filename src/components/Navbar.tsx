@@ -125,7 +125,7 @@ const Navbar: React.FC<navbarProps> = ({theme,updateTheme}) => {
       </ul>
 
       {/* ------------------------------ Theme Switch Button ------------------------------ */}
-      <button type="button" onClick={handleButtonClick} className={`animate__animated animate__faster ${rotateClass} absolute top-3 md:right-52 right-14 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br font-medium rounded-full text-sm px-1.5 py-1.5 text-center me-2 mb-2 `}>{theme == "light" ? DarkModeIcon : LightModeIcon}</button>
+      <button type="button" onClick={handleButtonClick} className={`animate__animated animate__faster ${rotateClass} absolute top-3 md:right-52 right-14 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br font-medium rounded-full text-sm px-1.5 py-1.5 text-center me-2 mb-2 `}>{theme == "dark" ? LightModeIcon : DarkModeIcon}</button>
 
       {/* ---------------------- Animated Get-in-touch button ---------------------- */}
       <a href="#" className="hidden md:block">

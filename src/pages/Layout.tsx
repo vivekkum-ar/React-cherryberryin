@@ -1,5 +1,6 @@
 import {Outlet} from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer';
 
 
 interface LayoutProps {
@@ -13,6 +14,7 @@ const Layout: React.FC<LayoutProps> = ({theme,updateTheme}) => {
     <div className=''>
       <Navbar theme = {theme} updateTheme = {updateTheme}></Navbar>
         <Outlet></Outlet>
+      <Footer theme = {theme} updateTheme = {updateTheme}></Footer>
     </div>
   )
 }
