@@ -130,8 +130,9 @@ const Home: React.FC<HomeProps> = ({theme}) => {
     });
       tl3.from(".build-animate",{
         opacity: 0, 
-        y: "100px", 
+        y: "30px", 
         // duration: 1,
+        stagger:0.5,
       })
     });
 
@@ -186,9 +187,82 @@ const Home: React.FC<HomeProps> = ({theme}) => {
         <p className="my-5 font-bg text-center build-animate dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
           Website that grows with your business
         </p>
-        <hr className="w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400"/>
-        <p className="mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
+        <hr className="build-animate w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400"/>
+        <p className="build-animate mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
       </div>
+
+
+      <div className="demo py-2">
+  <div className="container">
+    <div className="flex flex-row md:gap-8 gap-4 md:mx-20 mx-5">
+      <div className="md:w-1/3 w-1/2">
+        <div className="pricingTable">
+          <div className="pricingTable-header">
+            <h3 className="title">Standard</h3>
+          </div>
+          <ul className="pricing-content">
+            <li>50GB Disk Space</li>
+            <li>50 Email Accounts</li>
+            <li>50GB Bandwidth</li>
+            <li>Maintenance</li>
+            <li>15 Subdomains</li>
+          </ul>
+          <div className="price-value">
+            <span className="amount">$9.99/</span>
+            <span className="duration">month</span>
+          </div>
+          <div className="pricingTable-signup">
+            <a href="#">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      <div className="md:w-1/3 w-1/2">
+        <div className="pricingTable red">
+          <div className="pricingTable-header">
+            <h3 className="title">Business</h3>
+          </div>
+          <ul className="pricing-content">
+            <li>50GB Disk Space</li>
+            <li>50 Email Accounts</li>
+            <li>50GB Bandwidth</li>
+            <li>Maintenance</li>
+            <li>15 Subdomains</li>
+          </ul>
+          <div className="price-value">
+            <span className="amount">$19.99/</span>
+            <span className="duration">month</span>
+          </div>
+          <div className="pricingTable-signup">
+            <a href="#">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      <div className="md:w-1/3 w-1/2">
+        <div className="pricingTable green">
+          <div className="pricingTable-header">
+            <h3 className="title">Premium</h3>
+          </div>
+          <ul className="pricing-content">
+            <li>50GB Disk Space</li>
+            <li>50 Email Accounts</li>
+            <li>50GB Bandwidth</li>
+            <li>Maintenance</li>
+            <li>15 Subdomains</li>
+          </ul>
+          <div className="price-value">
+            <span className="amount">$29.99/</span>
+            <span className="duration">month</span>
+          </div>
+          <div className="pricingTable-signup">
+            <a href="#">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
       <div className="h-96"></div>
       <div className="h-96"></div>
