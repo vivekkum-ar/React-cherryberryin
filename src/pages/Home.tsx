@@ -59,7 +59,7 @@ const Home: React.FC<HomeProps> = ({theme}) => {
       const maxFrames = anim.totalFrames;
 
       const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
-      // console.log(`${maxFrames} / 100) * (${scrollPosition} / (${duration} / 100)`);
+      // console.log(`₹{maxFrames} / 100) * (₹{scrollPosition} / (₹{duration} / 100)`);
 
       anim.goToAndStop(frame, true);
     }
@@ -195,10 +195,10 @@ const Home: React.FC<HomeProps> = ({theme}) => {
       <div className="demo py-2">
   <div className="container">
     <div className="flex flex-row md:gap-8 gap-4 md:mx-20 mx-5">
-      <div className="md:w-1/3 w-1/2">
+      <div className="md:w-1/3 w-1/2 py-4 px-4">
         <div className="pricingTable">
           <div className="pricingTable-header">
-            <h3 className="title">Standard</h3>
+            <h3 className="title font-bg">Standard</h3>
           </div>
           <ul className="pricing-content">
             <li>50GB Disk Space</li>
@@ -208,18 +208,18 @@ const Home: React.FC<HomeProps> = ({theme}) => {
             <li>15 Subdomains</li>
           </ul>
           <div className="price-value">
-            <span className="amount">$9.99/</span>
-            <span className="duration">month</span>
+            <span className="amount font-bg overflow-hidden">₹9.99/</span>
+            <span className="duration font-bg overflow-hidden">month</span>
           </div>
           <div className="pricingTable-signup">
             <a href="#">Sign Up</a>
           </div>
         </div>
       </div>
-      <div className="md:w-1/3 w-1/2">
+      <div className="md:w-1/3 w-1/2 py-4 px-4">
         <div className="pricingTable red">
           <div className="pricingTable-header">
-            <h3 className="title">Business</h3>
+            <h3 className="title font-bg">Business</h3>
           </div>
           <ul className="pricing-content">
             <li>50GB Disk Space</li>
@@ -229,18 +229,18 @@ const Home: React.FC<HomeProps> = ({theme}) => {
             <li>15 Subdomains</li>
           </ul>
           <div className="price-value">
-            <span className="amount">$19.99/</span>
-            <span className="duration">month</span>
+            <span className="amount font-bg overflow-hidden">₹19.99/</span>
+            <span className="duration font-bg overflow-hidden">month</span>
           </div>
           <div className="pricingTable-signup">
             <a href="#">Sign Up</a>
           </div>
         </div>
       </div>
-      <div className="md:w-1/3 w-1/2">
+      <div className="md:w-1/3 w-1/2 py-4 px-4">
         <div className="pricingTable green">
           <div className="pricingTable-header">
-            <h3 className="title">Premium</h3>
+            <h3 className="title font-bg">Premium</h3>
           </div>
           <ul className="pricing-content">
             <li>50GB Disk Space</li>
@@ -250,8 +250,8 @@ const Home: React.FC<HomeProps> = ({theme}) => {
             <li>15 Subdomains</li>
           </ul>
           <div className="price-value">
-            <span className="amount">$29.99/</span>
-            <span className="duration">month</span>
+            <span className="amount font-bg overflow-hidden">₹29.99/</span>
+            <span className="duration font-bg overflow-hidden">month</span>
           </div>
           <div className="pricingTable-signup">
             <a href="#">Sign Up</a>
