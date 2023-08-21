@@ -18,6 +18,9 @@
     font-family: 'Grenze Gotisch Variable', sans-serif;
 }
 
+.theme-button{
+    -webkit-tap-highlight-color: transparent;
+}
 
 
 :root {
