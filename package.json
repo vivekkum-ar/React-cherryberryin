@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@fontsource-variable/brygada-1918": "^5.0.16",
+    "@fontsource-variable/outfit": "^5.0.8",
     "@fontsource/pacifico": "^5.0.8",
     "animate.css": "^4.1.1",
+    "animejs": "^3.2.1",
+    "framer-motion": "^10.16.5",
     "gsap": "^3.12.2",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",
@@ -21,6 +24,7 @@
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
+    "@types/animejs": "^3.1.11",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
