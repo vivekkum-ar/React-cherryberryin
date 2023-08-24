@@ -203,6 +203,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
   return (
     <>
+        <Modal ModalVisible = { ModalVisible } updateModalVisible = { setModalVisible }></Modal>
 
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
@@ -282,17 +283,16 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
       <div className=" dark:text-white bg-white dark:bg-gray-900 overflow-hidden" >
       {/* <!-- https://gist.github.com/goodreds/3579ddfffe439457b5ef9902b5336124 --> */}
-<section className="dark:text-white bg-white dark:bg-gray-900 flex flex-col justify-center max-w-6xl min-h-screen px-4 py-10 mx-auto sm:px-6">
+<section className="dark:text-white bg-white dark:bg-gray-900 flex flex-col justify-center max-w-6xl px-4 mx-auto sm:px-6">
 
-    <div className="flex flex-wrap -mx-4">
-        <Card image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title TitleTitleTitle Title Title Title" category="Technology Startup"></Card>
-        <Card image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title TitleTitleTitle Title Title Title"></Card>
-        <Card image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title TitleTitleTitle Title Title Title" category="Technology Startup"></Card>
+    <div className="flex flex-wrap -mx-4 card-parent">
+        <Card ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
+        <Card ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title"></Card>
+        <Card ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
     </div>
 </section>
       </div>
 
-        <Modal ModalVisible = { ModalVisible } updateModalVisible = { setModalVisible }></Modal>
 
         
       <div className="border-2 border-red-500 flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
