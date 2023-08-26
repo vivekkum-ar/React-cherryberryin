@@ -20,6 +20,7 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ theme }) => {
   const [Progress, setProgress] = useState(0);
   const [ModalVisible, setModalVisible] = useState(false);
+  const [indexOfColl,setindexOfColl] = useState(0);
 
   useEffect(() => {
     let tl2 = gsap.timeline({
@@ -203,7 +204,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
   return (
     <>
-        <Modal ModalVisible = { ModalVisible } updateModalVisible = { setModalVisible }></Modal>
+        <Modal ModalVisible = { ModalVisible } updateModalVisible = { setModalVisible } indexOfColl={ indexOfColl }></Modal>
 
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
@@ -286,9 +287,14 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 <section className="dark:text-white bg-white dark:bg-gray-900 flex flex-col justify-center max-w-6xl px-4 mx-auto sm:px-6">
 
     <div className="flex flex-wrap -mx-4 card-parent">
-        <Card ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
-        <Card ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title"></Card>
-        <Card ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
+        <Card id = {0} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title"></Card>
+        <Card id = {1} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
+        <Card id = {2} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
+    </div>
+    <div className="hidden md:flex flex-wrap -mx-4 card-parent">
+        <Card id = {3} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title"></Card>
+        <Card id = {4} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
+        <Card id = {5} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
     </div>
 </section>
       </div>

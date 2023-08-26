@@ -13,9 +13,12 @@ interface CardProps {
   link?:string;
   ModalVisible: boolean;
   updateModalVisible: Function;
+  setIndexOfColl: Function;
+  indexOfColl: number;
+  id :number;
 }
 
-const Card: React.FC<CardProps> = ({image,title,description,category="Website",link,ModalVisible,updateModalVisible}) => {
+const Card: React.FC<CardProps> = ({image,title,description,category="Website",link,ModalVisible,updateModalVisible,setIndexOfColl,indexOfColl,id}) => {
 
   useEffect(() => {
     let mm = gsap.matchMedia();
@@ -56,7 +59,10 @@ const Card: React.FC<CardProps> = ({image,title,description,category="Website",l
                             {description}
                         </p>
                     </div>
-                    <a href={ link } onClick={() => updateModalVisible(!ModalVisible)} className="cursor-pointer inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    <a href={ link } onClick={() => {
+                      setIndexOfColl(id);
+                      updateModalVisible(!ModalVisible);
+                    }} className="cursor-pointer inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                 Preview
                 { LaptopIcon }
               </a>

@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 interface ModalProps {
   // Add your prop types here
   ModalVisible : boolean;
   updateModalVisible : Function;
+  indexOfColl:number;
 }
 
-const Modal: React.FC<ModalProps> = ({ModalVisible,updateModalVisible}) => {
+const Modal: React.FC<ModalProps> = ({ModalVisible,updateModalVisible,indexOfColl}) => {
+
+  
+  const imgPaths:string[] = ["./images/example-sites/web (1)/","./images/example-sites/web (2)/","./images/example-sites/web (3)/","./images/example-sites/web (4)/","./images/example-sites/web (5)/","./images/example-sites/web (6)/"];
+  const imgCounts:number[] = [5,5,9,7,6,8];
+  let imgs:any[] = [];
+  let collOfImgs:any[] = [];
+    for (let j = 0; j < imgPaths.length; j++) {
+      // Loop to generate image tags
+    for (let i = 1; i <= imgCounts[j]; i++) {
+      const imgSrc = `${imgPaths[j]}${i}.png`; // Adjust the file extension if needed
+      imgs.push(<img key={i} src={imgSrc} alt={`Image ${i}`} data-bs-attribute = {j}/>);
+    }
+      collOfImgs.push(imgs);
+      imgs = [];
+    }
+  
+  
+
   return (
     <div id="extralarge-modal" tabIndex={-1} className={`${ModalVisible ? "block" : "hidden"} fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full`}>
   <div className="relative w-full max-w-7xl max-h-full">
@@ -26,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({ModalVisible,updateModalVisible}) => {
       </div>
       {/* Modal body */}
       <div className="p-4 md:p-5 space-y-4">
-        
+        {collOfImgs[indexOfColl]}
       </div>
       {/* Modal footer */}
       {/* <div className="flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse border-t border-gray-200 rounded-b dark:border-gray-600">
