@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 import animationData from "../assets/animation_lo8jcqf0.json";
 import lottie from "lottie-web";
 import { useRef, useEffect, useState } from "react";
-import { BusinessPackIcon, LaptopIcon, PremiumPackIcon, StandardPackIcon } from "../components/iconify";
+import { BusinessPackIcon, PremiumPackIcon, StandardPackIcon } from "../components/iconify";
 import anime from "animejs/lib/anime.js"
 // Supports weights 100-900
 import '@fontsource-variable/outfit';
@@ -22,6 +22,21 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
   const [ModalVisible, setModalVisible] = useState(false);
   const [indexOfColl,setindexOfColl] = useState(0);
 
+  useEffect(() => {
+    // Add or remove the class based on modal visibility
+    if (ModalVisible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+      document.body.style.overflowX = 'hidden';
+    }
+
+    // Cleanup effect
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [ModalVisible]);
+  
   useEffect(() => {
     let tl2 = gsap.timeline({
       scrollTrigger: {
@@ -51,6 +66,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
   const lottieRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    document.body.style.overflowX = 'hidden';
+
     let mm = gsap.matchMedia();
     // var animDuration = 10000;
     const anim = lottie.loadAnimation({
@@ -79,10 +96,10 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         end: "bottom 20%",
         onUpdate: (self) => {
           // console.log("progress:", self.progress);
-          animatebodymovin(1000, self.progress * 1000);
+          animatebodymovin(500, self.progress * 1000);
         },
         toggleActions: "play none none none",
-        // markers: true,
+        markers: true,
       },
     });
 
@@ -205,7 +222,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
   return (
     <>
         <Modal ModalVisible = { ModalVisible } updateModalVisible = { setModalVisible } indexOfColl={ indexOfColl }></Modal>
-
+      {/* {ModalVisible && document.} */}
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col justify-center">
@@ -254,7 +271,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <p className="build-animate mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
       </div>
       <div className="bg-white dark:bg-gray-900">
-      <svg xmlns="http://www.w3.org/2000/svg" id="demo-svg" className="hidden md:block" version="1.1" viewBox="0 80 800 300"><path d="M40.657691955566406,329.4469299316406C45.339306030273434,323.36621246337893,105.0702442932129,231.81464416503906,118.6845932006836,228.1016387939453C132.2989421081543,224.38863342285157,250.77426956176757,273.6442245483398,267.5635070800781,267.5635070800781C284.35274459838865,261.48278961181643,383.1150848388672,121.59042785644532,398.5052185058594,126.75634765625C413.8953521728516,131.9222674560547,513.6262750244141,350.54109466552734,524.0657348632812,353.66217041015625C534.5051947021484,356.78324615478516,557.7518200683594,185.5007339477539,572.4962158203125,178.77427673339844C587.2406115722656,172.04781951904297,757.9670971679687,237.78773376464844,769.8056640625,241.55455017089844" fill="none" stroke-width="4" stroke="url(&quot;#SvgjsLinearGradient1002&quot;)" stroke-linecap="round"></path><defs><linearGradient id="SvgjsLinearGradient1002"><stop stop-color="hsl(184, 74%, 44%)" offset="0"></stop><stop stop-color="hsl(332, 87%, 70%)" offset="1"></stop></linearGradient></defs>
+      <svg xmlns="http://www.w3.org/2000/svg" id="demo-svg" className="hidden md:block" version="1.1" viewBox="0 80 800 300"><path d="M40.657691955566406,329.4469299316406C45.339306030273434,323.36621246337893,105.0702442932129,231.81464416503906,118.6845932006836,228.1016387939453C132.2989421081543,224.38863342285157,250.77426956176757,273.6442245483398,267.5635070800781,267.5635070800781C284.35274459838865,261.48278961181643,383.1150848388672,121.59042785644532,398.5052185058594,126.75634765625C413.8953521728516,131.9222674560547,513.6262750244141,350.54109466552734,524.0657348632812,353.66217041015625C534.5051947021484,356.78324615478516,557.7518200683594,185.5007339477539,572.4962158203125,178.77427673339844C587.2406115722656,172.04781951904297,757.9670971679687,237.78773376464844,769.8056640625,241.55455017089844" fill="none" strokeWidth="4" stroke="url(&quot;#SvgjsLinearGradient1002&quot;)" strokeLinecap="round"></path><defs><linearGradient id="SvgjsLinearGradient1002"><stop stopColor="hsl(184, 74%, 44%)" offset="0"></stop><stop stopColor="hsl(332, 87%, 70%)" offset="1"></stop></linearGradient></defs>
         <text x="20" y="340" className={`text-[9.5px] font-bg font-semibold fill-black dark:fill-gray-300 ${Progress > 0 ? "animate__fadeInLeft animate__animated" : "hidden"}`}>Define Goals and Objectives</text>
         <text x="65" y="221" className={`text-[9.5px] font-bg font-semibold fill-black dark:fill-gray-300 ${Progress >= 24 ? "animate__fadeInLeft animate__animated" : "hidden"}`}>Understand the Target Audience</text>
         <text x="210" y="280" className={`text-[9.5px] font-bg font-semibold fill-black dark:fill-gray-300 ${Progress >= 35 ? "animate__fadeInLeft animate__animated" : "hidden"}`}>Conduct Competitor Analysis</text>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .font-pacifico {

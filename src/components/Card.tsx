@@ -18,7 +18,7 @@ interface CardProps {
   id :number;
 }
 
-const Card: React.FC<CardProps> = ({image,title,description,category="Website",link,ModalVisible,updateModalVisible,setIndexOfColl,indexOfColl,id}) => {
+const Card: React.FC<CardProps> = ({image,title,description,category="Website",link,ModalVisible,updateModalVisible,setIndexOfColl,id}) => {
 
   useEffect(() => {
     let mm = gsap.matchMedia();
