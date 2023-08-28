@@ -10,7 +10,7 @@ import anime from "animejs/lib/anime.js"
 import '@fontsource-variable/outfit';
 import Modal from "../components/Modal";
 import Card from "../components/Card";
-import Neumorphcard from "../components/neumorphismCard";
+import Neumorphcard from "../components/NeumorphismCard";
 
 
 interface HomeProps {

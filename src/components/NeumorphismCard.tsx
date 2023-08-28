@@ -22,7 +22,7 @@ const Neumorphcard: React.FC<NeumorphcardProps> = (props) => {
       </div>
         <div className="overflow-visible  grid grid-rows-3 sm:grid-rows-1 gap-y-0 px-5 sm:grid-cols-4 sm:gap-x-8">
 
-        <div style={{backgroundImage:`url("./images/website-undraw.svg")`}} className="translate-x-12 translate-y-12 bg-contain md:bg-contain border-b-2 border-gray-400 sm:border-0 bg-no-repeat bg-bottom md:bg-top row-span-0 sm:row-span-0 sm:col-span-1">
+        <div style={{backgroundImage:`url("./images/website-undraw.svg")`}} className="md:translate-x-12 md:translate-y-12 bg-contain md:bg-contain border-b-2 border-gray-400 sm:border-0 bg-no-repeat bg-bottom md:bg-top row-span-0 sm:row-span-0 sm:col-span-1">
           </div>
 
 
@@ -90,7 +90,7 @@ const Neumorphcard: React.FC<NeumorphcardProps> = (props) => {
           </div>
           {/* </Atropos> */}
 
-          <div style={{backgroundImage:`url("./images/web-builder.svg")`}} className="-translate-x-52 translate-y-80  scale-x-[-1] hidden md:block bg-cover border-b-2 border-gray-400 sm:border-0 bg-no-repeat bg-bottom md:bg-top md:bg-contain row-span-1 sm:row-span-0 sm:col-span-1">
+          <div style={{backgroundImage:`url("./images/web-builder.svg")`}} className="md:-translate-x-52 md:translate-y-80  scale-x-[-1] hidden md:block bg-cover border-b-2 border-gray-400 sm:border-0 bg-no-repeat bg-bottom md:bg-top md:bg-contain row-span-1 sm:row-span-0 sm:col-span-1">
           </div>
 
         </div>
