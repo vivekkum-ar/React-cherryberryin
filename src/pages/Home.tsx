@@ -10,6 +10,7 @@ import anime from "animejs/lib/anime.js"
 import '@fontsource-variable/outfit';
 import Modal from "../components/Modal";
 import Card from "../components/Card";
+import Neumorphcard from "../components/neumorphismCard";
 
 
 interface HomeProps {
@@ -316,6 +317,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 </section>
       </div>
 
+
+
+        <Neumorphcard Title="From start to growth" Description="from start to growth.from start to growth.from start to growth."/>
 
         
       <div className="border-2 border-red-500 flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
