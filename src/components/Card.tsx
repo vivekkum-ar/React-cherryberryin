@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+// import React, { useEffect } from 'react'
 import { LaptopIcon } from './iconify'
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 
 interface CardProps {
   // Add your prop types here
@@ -20,28 +20,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({image,title,description,category="Website",link,ModalVisible,updateModalVisible,setIndexOfColl,id}) => {
 
-  useEffect(() => {
-    let mm = gsap.matchMedia();
-    mm.add("(min-width: 768px)", () => {
-    let tl1 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".card-parent",
-          start: "top bottom-=10%",
-          end: "top center",
-          toggleActions: "play none none none",
-          // markers: true,
-          scrub: true,
-          // pin:true,
-        },
-      });
-      tl1.from(".-card", {
-        opacity: 0,
-        y: "30px",
-        // duration: 1,
-        stagger: 0.5,
-      })
-    });
-}, []);
+  
   return (
     <div className="ourWork-card w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
             <img src={ image } alt="https://source.unsplash.com/Lki74Jj7H-U/400x300" className="object-cover object-center w-full h-48" />
