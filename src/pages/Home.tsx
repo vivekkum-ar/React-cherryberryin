@@ -8,7 +8,7 @@ import { useRef, useEffect, useState } from "react";
 import '@fontsource-variable/outfit';
 import Modal from "../components/Modal";
 import Card from "../components/Card";
-import Neumorphcard from "../components/NeumorphismCard";
+import Neumorphcard from "../components/TimelineCard";
 import PricingCards from "../components/PricingCards";
 import anime from "animejs/lib/anime.js";
 
@@ -206,21 +206,34 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
   
         },
       });
+      // let tmp = 0;
+      // let max =0;
       let tl5 = gsap.timeline({
         scrollTrigger: {
           trigger: ".card-parent-ourWork-card",
           start: "top center",
           end: "bottom bottom-=20%",
           toggleActions: "play none none none",
-          markers: true,
+          // markers: true,
           scrub: true,
           // pin:true,
+          // onUpdate: (self) => {
+          //   if (self.direction == 1) {
+          //     tmp = tl5.progress();
+          //     if(tmp > max){
+          //       max = Math.max(max,tmp);
+          //     }
+          //     tl5.progress(max);
+          //   }
+          //   console.log("Direction:", self.direction, "Progress:", self.progress, "tl5 progress",tl5.progress());
+          // },
+          // onLeave: self => self.kill(false, true),
         }});
         tl5.from(".ourWork-card", {
           opacity: 0,
           y: "30px",
           // duration: 1,
-          stagger: 0.5,
+          stagger: 1,
         });
       let tl7 = gsap.timeline({
         scrollTrigger: {
@@ -228,7 +241,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           start: "top center",
           end: "bottom bottom-=20%",
           toggleActions: "play none none none",
-          markers: true,
+          // markers: true,
           // scrub: true,
           // pin:true,
         }});
@@ -244,7 +257,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           start: "top center",
           end: "bottom bottom-=20%",
           toggleActions: "play none none none",
-          markers: true,
+          // markers: true,
           // scrub: true,
           // pin:true,
         }});

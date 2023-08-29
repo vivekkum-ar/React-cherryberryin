@@ -3,11 +3,11 @@ import { CreateRoundedIcon } from './iconify';
 // import Atropos from 'atropos/react';
 // import 'atropos/css';
 
-  interface NeumorphcardProps {
+  interface TimelineCardProps {
     Title: string;
     Description: string;
   }
-const Neumorphcard: React.FC<NeumorphcardProps> = (props) => {
+const TimelineCard: React.FC<TimelineCardProps> = (props) => {
     const { Title, Description } = props; //Destructuring Title, Description = props = title, description(from parent)
   return (
     <section className="md:h-84 pb-12 dark:bg-gray-900">
@@ -98,4 +98,4 @@ const Neumorphcard: React.FC<NeumorphcardProps> = (props) => {
   )
 }
 
-export default Neumorphcard
+export default TimelineCard
