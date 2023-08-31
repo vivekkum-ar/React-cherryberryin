@@ -407,12 +407,12 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       <PricingCards></PricingCards>
       </section>
 
-      <div className="h-96"></div>
 
 
 
-<div className="formfoodies">
-      <div className="col-md-7 p-5 p-xs-2 me-2 col-lg-6 text-dark fw-bolder contact-fp-div my-5">
+      <section className="formfoodies flex justify-end bg-white dark:bg-gray-900 px-10">
+        <div className="h-screen w-screen mt-32" style={{backgroundImage:`url("./images/undraw_agreement_re_d4dv.svg")`,backgroundRepeat:"no-repeat",backgroundSize:"contain"}}> </div>
+        <div className="col-md-7 p-5 p-xs-2 me-2 col-lg-6 text-black dark:text-white  fw-bolder contact-fp-div my-5">
           <h4 className="mb-3 fw-bolder display-6 font-bg">
             Contact Form
           </h4>
@@ -474,12 +474,12 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
                   Query type
                 </label>
                 <select className="form-select" id="country" name="user_qtype" required>
-                <option value="Feedback">Feedback</option>
-                <option value="Enquiry">Enquiry</option>
-                <option value="Booking">Booking</option>
-                <option value="Reservation">Reservation</option>
-                <option value="Events">Events</option>
-                <option value="">Others</option>
+                  <option value="Feedback">Feedback</option>
+                  <option value="Enquiry">Enquiry</option>
+                  <option value="Booking">Booking</option>
+                  <option value="Reservation">Reservation</option>
+                  <option value="Events">Events</option>
+                  <option value="">Others</option>
                 </select>
                 <small className="text-muted">
                   Allow us to serve you better, provide a type.
@@ -560,9 +560,14 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
               </label>
             </div>
             <hr className="my-4" />
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="flex justify-content-center align-items-center">
               <button className="font-bg" type="submit">
-                Submit
+              <div className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                Contact us
+                <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+              </div>
               </button>
             </div>
           </form>
@@ -574,7 +579,11 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         </div>
       )} */}
         </div>
-        </div>
+      </section>
+
+
+      <div className="h-96"></div>
+
     </>
   );
 };
