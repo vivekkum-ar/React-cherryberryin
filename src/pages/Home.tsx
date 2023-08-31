@@ -8,9 +8,10 @@ import { useRef, useEffect, useState } from "react";
 import '@fontsource-variable/outfit';
 import Modal from "../components/Modal";
 import Card from "../components/Card";
-import Neumorphcard from "../components/TimelineCard";
+import TimelineCard from "../components/TimelineCard";
 import PricingCards from "../components/PricingCards";
 import anime from "animejs/lib/anime.js";
+import { Link } from "react-router-dom";
 
 
 
@@ -166,6 +167,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           // markers: true,
           scrub: true,
           // pin:true,
+          onLeave: self => self.kill(false, true),
         },
       });
       tl4.from(".pricing-card", {
@@ -215,7 +217,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           end: "bottom bottom-=20%",
           toggleActions: "play none none none",
           // markers: true,
-          scrub: true,
+          // scrub: true,
           // pin:true,
           // onUpdate: (self) => {
           //   if (self.direction == 1) {
@@ -267,6 +269,22 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           // duration: 1,
           stagger: 0.5,
         });
+      let tl9 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".parent-timelinecard",
+          start: "top center+=20%",
+          end: "bottom bottom",
+          toggleActions: "play none none none",
+          markers: true,
+          scrub: true,
+          // pin:true,
+        }});
+        tl9.from(".timelinecard", {
+          opacity: 0,
+          x: "30px",
+          // duration: 1,
+          stagger: 0.5,
+        });
     });
 
     return () => {
@@ -299,6 +317,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           </div>
         </div>
       </section>
+
+      <section className="">
       <div className="bg-white dark:bg-gray-900 w-full top-66 flex flex-col-reverse md:flex-row md:px-32 items-center justify-center lottie-trigger">
         <div className="h-[500px] grow lottie-were-cb" ref={lottieRef}></div>
         <div className="h-fit">
@@ -310,6 +330,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           </p>
         </div>
       </div>
+      </section>
+
+      <section className="">
       <div className="parent-build-animate border-2 border-red-500 flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         <p className="my-5 font-bg text-center build-animate dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
         Your Business, Our Website Expertise
@@ -332,7 +355,10 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <text x="720" y="255" className={`text-[9.5px] font-bg font-semibold fill-black dark:fill-gray-300 ${Progress >= 100 ? "animate__fadeInRight animate__animated" : "hidden"}`}>Test and Launch</text>
       </svg>
       </div>
+      </section>
 
+
+<section className="">
       <div className="card-parent-examples-title border-2 border-red-500 flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         <p className="my-5 font-bg text-center examples-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
           Website that grows with your business
@@ -347,7 +373,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
       <div className=" dark:text-white bg-white dark:bg-gray-900 overflow-hidden" >
       {/* <!-- https://gist.github.com/goodreds/3579ddfffe439457b5ef9902b5336124 --> */}
-<section className="card-parent-ourWork-card dark:text-white bg-white dark:bg-gray-900 flex flex-col justify-center max-w-6xl px-4 mx-auto sm:px-6">
+<div className="card-parent-ourWork-card dark:text-white bg-white dark:bg-gray-900 flex flex-col justify-center max-w-6xl px-4 mx-auto sm:px-6">
 
     <div className="flex flex-wrap -mx-4">
         <Card id = {0} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title"></Card>
@@ -359,14 +385,16 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <Card id = {4} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
         <Card id = {5} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
     </div>
-</section>
+</div>
       </div>
+      </section>
 
 
+      <section className="">
+        <TimelineCard Title="From start to growth" Description="from start to growth.from start to growth.from start to growth."/>
+        </section>
 
-        <Neumorphcard Title="From start to growth" Description="from start to growth.from start to growth.from start to growth."/>
-
-        
+        <section className="">
       <div className="parent-pricing-card-title border-2 border-red-500 flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         <p className="my-5 font-bg text-center pricing-card-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
           Select your package
@@ -377,11 +405,176 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
 
       <PricingCards></PricingCards>
-
-
+      </section>
 
       <div className="h-96"></div>
-      <div className="h-96"></div>
+
+
+
+<div className="formfoodies">
+      <div className="col-md-7 p-5 p-xs-2 me-2 col-lg-6 text-dark fw-bolder contact-fp-div my-5">
+          <h4 className="mb-3 fw-bolder display-6 font-bg">
+            Contact Form
+          </h4>
+          <form className="needs-validation" noValidate>
+            <div className="row g-3">
+              <div className="col-sm-6">
+                <label htmlFor="firstName" className="form-label">
+                  First name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="firstName"
+                  name="user_fname"
+                  placeholder="First Name"
+                  required
+                />
+                <div className="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <label htmlFor="lastName" className="form-label">
+                  Last name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="lastName"
+                  name="user_lname"
+                  placeholder="Last Name"
+                  required
+                />
+                <div className="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+              <div className="col-md-6">
+                <label htmlFor="contact" className="form-label">
+                  Contact Number
+                </label>
+                <div className="input-group has-validation">
+                  <span className="input-group-text">+91</span>
+                  <input
+                    type="tel"
+                    className="form-control"
+                    id="contact"
+                    name="user_contact"
+                    placeholder="contact"
+                    required
+                  />
+                  <div className="invalid-feedback">
+                    Your contact number is required.
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <label htmlFor="country" className="form-label">
+                  Query type
+                </label>
+                <select className="form-select" id="country" name="user_qtype" required>
+                <option value="Feedback">Feedback</option>
+                <option value="Enquiry">Enquiry</option>
+                <option value="Booking">Booking</option>
+                <option value="Reservation">Reservation</option>
+                <option value="Events">Events</option>
+                <option value="">Others</option>
+                </select>
+                <small className="text-muted">
+                  Allow us to serve you better, provide a type.
+                </small>
+                <div className="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+              <div className="col-12">
+                <label htmlFor="email" className="form-label">
+                  Email <span className="text-muted">(Optional)</span>
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="user_email"
+                  placeholder="you@example.com"
+                  required
+                />
+                <div className="invalid-feedback">
+                  Please enter a valid email address for updates.
+                </div>
+              </div>
+              <div className="col-12">
+                <label htmlFor="address" className="form-label">
+                  Address <span className="text-muted">(Optional)</span>
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="address2"
+                  name="user_address"
+                  placeholder="Apartment or suite"
+                />
+              </div>
+              <div className="col-12">
+                <label htmlFor="message" className="form-label">
+                  Message
+                </label>
+                <textarea
+                  className="form-control"
+                  id="message"
+                  placeholder="Your enquiry, message, feedback goes here"
+                  name="user_message"
+                  required
+                  rows={3}
+                ></textarea>
+                <div className="invalid-feedback">
+                  Please enter your enquiry, message, feedback.
+                </div>
+              </div>
+            </div>
+            <hr className="my-4" />
+            <div className="form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="same-address"
+                required
+              />
+              <label className="form-check-label" htmlFor="same-address">
+                I can be contacted if need be.
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="save-info"
+                required
+              />
+              <label className="form-check-label" htmlFor="save-info">
+                I agree with the terms and conditions as provided{" "}
+                <Link to="" className="fw-bolder text-primary">
+                  here
+                </Link>
+              </label>
+            </div>
+            <hr className="my-4" />
+            <div className="d-flex justify-content-center align-items-center">
+              <button className="font-bg" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+          {/* Display the alert if showAlert is true
+      {showAlert && (
+        <div className="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+          <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={() => setShowAlert(false)} />
+        </div>
+      )} */}
+        </div>
+        </div>
     </>
   );
 };

@@ -10,7 +10,7 @@ import { CreateRoundedIcon } from './iconify';
 const TimelineCard: React.FC<TimelineCardProps> = (props) => {
     const { Title, Description } = props; //Destructuring Title, Description = props = title, description(from parent)
   return (
-    <section className="md:h-84 pb-12 dark:bg-gray-900">
+    <section className=" md:h-84 pb-12 dark:bg-gray-900">
             <div className="border-2 parent-neumorph border-red-500 flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         {/* <div className="neumorph -trigger absolute border-lg border-red-500">
         </div> */}
@@ -39,11 +39,12 @@ const TimelineCard: React.FC<TimelineCardProps> = (props) => {
             
             {/* <h1 data-atropos-offset="5" className={`overflow text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-2 font-bg`}>{Title}</h1>
             <p className="text-sm md:text-lg font-normal text-gray-700 dark:text-white mb-6" data-atropos-offset="7">{Description}</p> */}
-            <ol className="relative px-12 border-s border-gray-200 dark:border-gray-700">                  
+            <ol className="parent-timelinecard relative px-12 border-s border-gray-200 dark:border-gray-700">                  
         <li className="mb-10 ms-6">            
           <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
             {CreateRoundedIcon}
           </span>
+        <div className="timelinecard">
           <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Get Going 
           {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">Latest</span> */}
           </h3>
@@ -55,30 +56,37 @@ const TimelineCard: React.FC<TimelineCardProps> = (props) => {
               <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
             </svg>  */}
             Get Started</a>
+            </div>
         </li>
         <li className="mb-10 ms-6">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
             {CreateRoundedIcon}
           </span>
+          <div className="timelinecard">
           <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Get Online</h3>
           <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Take your business online</time>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">Get discovered with a professional website. Easily customize with our expert designers.</p>
+          </div>
         </li>
         <li className="mb-10 ms-6">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
             {CreateRoundedIcon}
           </span>
+          <div className="timelinecard">
           <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Get Selling</h3>
           <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Start selling immediately</time>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">All-in-one powerful eCommerce tools to simplify order management, shipping, and payments.</p>
+          </div>
         </li>
-        <li className=" ms-6">
+        <li className="ms-6">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
             {CreateRoundedIcon}
           </span>
+          <div className="timelinecard">
           <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Get Growing</h3>
           <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Increase impact with a website</time>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">Find new customers with integrated marketing tools, from Facebook ads to automated email campaigns.</p>
+          </div>
         </li>
       </ol>
             {/* <a href="#" data-atropos-offset="10" className="mt-10 flex sm:inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-gray-300 rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
