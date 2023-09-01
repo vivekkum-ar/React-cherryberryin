@@ -11,7 +11,7 @@ import Card from "../components/Card";
 import TimelineCard from "../components/TimelineCard";
 import PricingCards from "../components/PricingCards";
 import anime from "animejs/lib/anime.js";
-import { Link } from "react-router-dom";
+import ContactForm from "../components/ContactForm";
 
 
 
@@ -408,177 +408,18 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       </section>
 
 
-
-
-      <section className="formfoodies flex justify-end bg-white dark:bg-gray-900 px-10">
-        <div className="h-screen w-screen mt-32" style={{backgroundImage:`url("./images/undraw_agreement_re_d4dv.svg")`,backgroundRepeat:"no-repeat",backgroundSize:"contain"}}> </div>
-        <div className="col-md-7 p-5 p-xs-2 me-2 col-lg-6 text-black dark:text-white  fw-bolder contact-fp-div my-5">
-          <h4 className="mb-3 fw-bolder display-6 font-bg">
-            Contact Form
-          </h4>
-          <form className="needs-validation" noValidate>
-            <div className="row g-3">
-              <div className="col-sm-6">
-                <label htmlFor="firstName" className="form-label">
-                  First name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="firstName"
-                  name="user_fname"
-                  placeholder="First Name"
-                  required
-                />
-                <div className="invalid-feedback">
-                  Valid first name is required.
-                </div>
-              </div>
-              <div className="col-sm-6">
-                <label htmlFor="lastName" className="form-label">
-                  Last name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="lastName"
-                  name="user_lname"
-                  placeholder="Last Name"
-                  required
-                />
-                <div className="invalid-feedback">
-                  Valid last name is required.
-                </div>
-              </div>
-              <div className="col-md-6">
-                <label htmlFor="contact" className="form-label">
-                  Contact Number
-                </label>
-                <div className="input-group has-validation">
-                  <span className="input-group-text">+91</span>
-                  <input
-                    type="tel"
-                    className="form-control"
-                    id="contact"
-                    name="user_contact"
-                    placeholder="contact"
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Your contact number is required.
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <label htmlFor="country" className="form-label">
-                  Query type
-                </label>
-                <select className="form-select" id="country" name="user_qtype" required>
-                  <option value="Feedback">Feedback</option>
-                  <option value="Enquiry">Enquiry</option>
-                  <option value="Booking">Booking</option>
-                  <option value="Reservation">Reservation</option>
-                  <option value="Events">Events</option>
-                  <option value="">Others</option>
-                </select>
-                <small className="text-muted">
-                  Allow us to serve you better, provide a type.
-                </small>
-                <div className="invalid-feedback">
-                  Please select a valid country.
-                </div>
-              </div>
-              <div className="col-12">
-                <label htmlFor="email" className="form-label">
-                  Email <span className="text-muted">(Optional)</span>
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="user_email"
-                  placeholder="you@example.com"
-                  required
-                />
-                <div className="invalid-feedback">
-                  Please enter a valid email address for updates.
-                </div>
-              </div>
-              <div className="col-12">
-                <label htmlFor="address" className="form-label">
-                  Address <span className="text-muted">(Optional)</span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="address2"
-                  name="user_address"
-                  placeholder="Apartment or suite"
-                />
-              </div>
-              <div className="col-12">
-                <label htmlFor="message" className="form-label">
-                  Message
-                </label>
-                <textarea
-                  className="form-control"
-                  id="message"
-                  placeholder="Your enquiry, message, feedback goes here"
-                  name="user_message"
-                  required
-                  rows={3}
-                ></textarea>
-                <div className="invalid-feedback">
-                  Please enter your enquiry, message, feedback.
-                </div>
-              </div>
-            </div>
-            <hr className="my-4" />
-            <div className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="same-address"
-                required
-              />
-              <label className="form-check-label" htmlFor="same-address">
-                I can be contacted if need be.
-              </label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="save-info"
-                required
-              />
-              <label className="form-check-label" htmlFor="save-info">
-                I agree with the terms and conditions as provided{" "}
-                <Link to="" className="fw-bolder text-primary">
-                  here
-                </Link>
-              </label>
-            </div>
-            <hr className="my-4" />
-            <div className="flex justify-content-center align-items-center">
-              <button className="font-bg" type="submit">
-              <div className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                Contact us
-                <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-              </div>
-              </button>
-            </div>
-          </form>
-          {/* Display the alert if showAlert is true
-      {showAlert && (
-        <div className="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-          <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={() => setShowAlert(false)} />
-        </div>
-      )} */}
-        </div>
+      <section>
+      <div className="parent-pricing-card-title border-2 border-red-500 flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+        <p className="my-5 font-bg text-center pricing-card-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
+          Reach Us
+        </p>
+        <hr className="pricing-card-title w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
+        {/* <p className="pricing-card-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p> */}
+      </div>
+      <div className="formfoodies flex flex-col md:flex-row justify-center md:justify-end bg-white dark:bg-gray-900 px-2 md:px-10">
+        
+        <ContactForm></ContactForm>
+      </div>
       </section>
 
 

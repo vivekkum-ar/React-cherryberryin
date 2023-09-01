@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@fontsource-variable/brygada-1918": "^5.0.16",
     "@fontsource-variable/outfit": "^5.0.8",
     "@fontsource/pacifico": "^5.0.8",
     "animate.css": "^4.1.1",
     "animejs": "^3.2.1",
+    "dotenv": "^16.3.1",
     "framer-motion": "^10.16.5",
     "gsap": "^3.12.2",
     "lottie-react": "^2.4.0",
