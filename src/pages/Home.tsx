@@ -12,6 +12,7 @@ import TimelineCard from "../components/TimelineCard";
 import PricingCards from "../components/PricingCards";
 import anime from "animejs/lib/anime.js";
 import ContactForm from "../components/ContactForm";
+import Faqs from "../components/Faqs";
 
 
 
@@ -407,6 +408,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       <PricingCards></PricingCards>
       </section>
 
+<section>
+  <Faqs></Faqs>
+</section>
 
       <section>
       <div className="parent-pricing-card-title border-2 border-red-500 flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
