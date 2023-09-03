@@ -87,22 +87,22 @@ if (!serviceId || !templateId || !publicKey) {
       </h4> */}
       <form className="needs-validation" ref={form} onSubmit={sendEmail}>
         <div className="row g-3">
-          <div className="col-sm-6">
+          <div className="col-12">
             <label htmlFor="firstName" className="form-label">
-              First name
+              Name
             </label>
             <input
               type="text"
               className="form-control"
               id="firstName"
               name="user_fname"
-              placeholder="First Name"
+              placeholder="Your name"
               required />
             <div className="invalid-feedback">
-              Valid first name is required.
+              Valid name is required.
             </div>
           </div>
-          <div className="col-sm-6">
+          {/* <div className="col-sm-6">
             <label htmlFor="lastName" className="form-label">
               Last name
             </label>
@@ -116,24 +116,29 @@ if (!serviceId || !templateId || !publicKey) {
             <div className="invalid-feedback">
               Valid last name is required.
             </div>
-          </div>
+          </div> */}
           <div className="col-md-6">
             <label htmlFor="contact" className="form-label">
               Contact Number
             </label>
             <div className="input-group has-validation">
-              <span className="input-group-text">+91</span>
+              {/* <span className="input-group-text">+91</span> */}
               <input
                 type="tel"
                 className="form-control"
                 id="contact"
                 name="user_contact"
-                placeholder="contact"
+                placeholder="Contact"
                 required />
+                
               <div className="invalid-feedback">
                 Your contact number is required.
               </div>
+              
             </div>
+            <small className=" dark:text-white">
+              Contact info with country code
+            </small>
           </div>
           <div className="col-md-6">
             <label htmlFor="country" className="form-label">
