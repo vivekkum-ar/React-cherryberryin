@@ -18,7 +18,7 @@ import Faqs from "../components/Faqs";
 
 interface HomeProps {
   // Add your prop types here
-  theme: String;
+  theme: string;
   updateTheme: Function;
 }
 const Home: React.FC<HomeProps> = ({ theme }) => {
@@ -377,14 +377,14 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 <div className="card-parent-ourWork-card dark:text-white bg-white dark:bg-gray-900 flex flex-col justify-center max-w-6xl px-4 mx-auto sm:px-6">
 
     <div className="flex flex-wrap -mx-4">
-        <Card id = {0} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title"></Card>
-        <Card id = {1} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
-        <Card id = {2} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
+        <Card id = {0} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } title="Title Title" description="Title Title Title Title Title Title Title Title"></Card>
+        <Card id = {1} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
+        <Card id = {2} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
     </div>
     <div className="hidden md:flex flex-wrap -mx-4">
-        <Card id = {3} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title"></Card>
-        <Card id = {4} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
-        <Card id = {5} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } image="https://source.unsplash.com/Lki74Jj7H-U/400x300" title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
+        <Card id = {3} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } title="Title Title" description="Title Title Title Title Title Title Title Title"></Card>
+        <Card id = {4} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
+        <Card id = {5} setIndexOfColl = {setindexOfColl} indexOfColl = {indexOfColl} ModalVisible = {ModalVisible} updateModalVisible = { setModalVisible } title="Title Title" description="Title Title Title Title Title Title Title Title" category="Technology Startup"></Card>
     </div>
 </div>
       </div>
@@ -405,7 +405,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       </div>
 
 
-      <PricingCards></PricingCards>
+      <PricingCards theme={theme}></PricingCards>
       </section>
 
 <section>

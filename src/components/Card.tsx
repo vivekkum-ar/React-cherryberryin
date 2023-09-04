@@ -6,7 +6,6 @@ import { LaptopIcon } from './iconify'
 
 interface CardProps {
   // Add your prop types here
-  image: string;
   category?: string;
   title: string;
   description: string;
