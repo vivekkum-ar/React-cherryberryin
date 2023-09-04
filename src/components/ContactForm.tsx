@@ -78,6 +78,41 @@ if (!serviceId || !templateId || !publicKey) {
   return (
     
     <>
+     {/* Display the alert if showAlert is true */}
+     {showAlert && (
+<div id="" className="fixed z-40 w-84 top-5 items-center p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400 border border-dark-500" role="alert">
+
+<span className="sr-only">Info</span>
+<div className="ms-3 text-sm font-medium">
+<strong>✔️ Submitted !</strong> We have received your input, and we'll get back to you. Please check your email. &nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" onClick={() => setShowAlert(false)} className="inline ms-2 -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700" data-dismiss-target="#alert-3" aria-label="Close">
+  <span className="sr-only">Close</span>
+  <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+  </svg>
+</button>
+</div>
+</div>
+
+
+      // <div className="d-flex justify-content-center">
+      // <div className="alert-container">
+      //     <div className="alert alert-success alert-dismissible fade show" role="alert">
+      //       <strong>Submitted !</strong> We have received your input, and we'll get back to you. Please check your email.
+      //       <button
+      //         type="button"
+      //         className="btn-close text-dark fs-2 pe-2 pt-2"
+      //         data-bs-dismiss="alert"
+      //         aria-label="Close"
+      //         onClick={() => setShowAlert(false)}
+      //       >
+      //         X
+      //         </button>
+            
+      //     </div>
+      //   </div>
+      //   </div>
+       )} 
     <div className="h-screen w-screen md:mt-32" style={{ backgroundImage: `url("./images/undraw_agreement_re_d4dv.svg")`, backgroundRepeat: "no-repeat", backgroundSize: "contain" }}> 
     </div>
 
@@ -98,9 +133,9 @@ if (!serviceId || !templateId || !publicKey) {
               name="user_fname"
               placeholder="Your name"
               required />
-            <div className="invalid-feedback">
+            {/* <div className="invalid-feedback">
               Valid name is required.
-            </div>
+            </div> */}
           </div>
           {/* <div className="col-sm-6">
             <label htmlFor="lastName" className="form-label">
@@ -113,7 +148,7 @@ if (!serviceId || !templateId || !publicKey) {
               name="user_lname"
               placeholder="Last Name"
               required />
-            <div className="invalid-feedback">
+            // <div className="invalid-feedback">
               Valid last name is required.
             </div>
           </div> */}
@@ -131,9 +166,9 @@ if (!serviceId || !templateId || !publicKey) {
                 placeholder="Contact"
                 required />
                 
-              <div className="invalid-feedback">
+              {/* <div className="invalid-feedback">
                 Your contact number is required.
-              </div>
+              </div> */}
               
             </div>
             <small className=" dark:text-white">
@@ -152,9 +187,9 @@ if (!serviceId || !templateId || !publicKey) {
             <small className=" dark:text-white">
               Allow us to serve you better, provide a type.
             </small>
-            <div className="invalid-feedback">
+            {/* <div className="invalid-feedback">
               Please select a valid country.
-            </div>
+            </div> */}
           </div>
           <div className="col-12">
             <label htmlFor="email" className="form-label">
@@ -167,9 +202,9 @@ if (!serviceId || !templateId || !publicKey) {
               name="user_email"
               placeholder="you@example.com"
               required />
-            <div className="invalid-feedback">
+            {/* <div className="invalid-feedback">
               Please enter a valid email address for updates.
-            </div>
+            </div> */}
           </div>
           {/* <div className="col-12">
             <label htmlFor="address" className="form-label">
@@ -194,9 +229,9 @@ if (!serviceId || !templateId || !publicKey) {
               required
               rows={3}
             ></textarea>
-            <div className="invalid-feedback">
+            {/* <div className="invalid-feedback">
               Please enter your enquiry, message, feedback.
-            </div>
+            </div> */}
           </div>
         </div>
         <hr className="my-4" />
