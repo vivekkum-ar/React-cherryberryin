@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({theme,updateTheme}) => {
   // const [theme, setTheme] = useState("light");
   return (
-    <div className=''>
+    <div className='dark:bg-gray-900 bg-white'>
       <Navbar theme = {theme} updateTheme = {updateTheme}></Navbar>
         <Outlet></Outlet>
       <Footer theme = {theme} updateTheme = {updateTheme}></Footer>
