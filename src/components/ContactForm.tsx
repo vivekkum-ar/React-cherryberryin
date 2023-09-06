@@ -235,7 +235,7 @@ if (!serviceId || !templateId || !publicKey) {
           </div>
         </div>
         <hr className="my-4" />
-        <div className="form-check">
+        {/* <div className="form-check">
           <input
             type="checkbox"
             className="form-check-input"
@@ -244,7 +244,7 @@ if (!serviceId || !templateId || !publicKey) {
           <label className="form-check-label" htmlFor="same-address">
             I can be contacted if need be.
           </label>
-        </div>
+        </div> */}
         <div className="form-check">
           <input
             type="checkbox"
