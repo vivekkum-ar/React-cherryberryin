@@ -11,7 +11,7 @@ const TimelineCard: React.FC<TimelineCardProps> = (props) => {
     const { Title, Description } = props; //Destructuring Title, Description = props = title, description(from parent)
   return (
     <section className=" md:h-84 pb-12 dark:bg-gray-900">
-            <div className="border-2 parent-neumorph border-red-500 flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+            <div className="parent-neumorph flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         {/* <div className="neumorph -trigger absolute border-lg border-red-500">
         </div> */}
         <p className="my-5 font-bg text-center neumorph  dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">

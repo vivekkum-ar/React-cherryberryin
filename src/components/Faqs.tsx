@@ -26,7 +26,7 @@ const Faqs = () => {
   return (
     <section className="py-10 bg-white dark:bg-gray-900 sm:py-16 lg:py-24">
   <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-  <div className="parent-faqs-title border-2 border-red-500 flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+  <div className="parent-faqs-title flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         <p className="my-5 font-bg text-center faqs-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
           FAQs
         </p>
