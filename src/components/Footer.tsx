@@ -5,8 +5,8 @@ interface FooterProps {
 }
 const Footer: React.FC<FooterProps> = ({ }) => {
   return (
-    <footer className="bottom-0 bg-white dark:bg-gray-900 relative">
-  <div className="grid w-screen absolute top-10 md:top-0 bottom-0 right-0 left-0 md:left-10">
+    <footer className="bottom-0 bg-white dark:bg-gray-900 relative md:max-w-screen-xl ">
+  <div className="grid w-screen absolute top-10 md:top-0 bottom-0 right-0 ">
         <div className="justify-self-center md:justify-self-start opacity-25 w-64 h-80 md:h-64 md:w-52" style={{ backgroundImage: `url("/images/logo.png")`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
         </div>
       </div>

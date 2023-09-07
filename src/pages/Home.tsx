@@ -328,6 +328,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
   return (
     <>
         <Modal ModalVisible = { ModalVisible } updateModalVisible = { setModalVisible } indexOfColl={ indexOfColl }></Modal>
+
+        
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col justify-center">
@@ -391,7 +393,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       </section>
 
 
-<section className="mt-20">
+<section className="md:mt-20 mt-10">
       <div className="card-parent-examples-title border-2 border-red-500 flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         <p className="my-5 font-bg text-center examples-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
           Website that grows with your business
@@ -423,7 +425,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       </section>
 
 
-      <section className="mt-20">
+      <section className="md:mt-20 mt-10">
         <TimelineCard Title="From start to growth" Description="from start to growth.from start to growth.from start to growth."/>
         </section>
 
@@ -444,7 +446,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
   <Faqs></Faqs>
 </section>
 
-      <section className="mb-20">
+      <section className="md:mb-20 mb-0 md:mt-20 mt-10">
       <div className="parent-contact-card-title border-2 border-red-500 flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
         <p className="my-5 font-bg text-center contact-card-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
           Contact Us
@@ -452,7 +454,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <hr className="contact-card-title w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
         {/* <p className="pricing-card-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p> */}
       </div>
-      <div className="formfoodies flex flex-col md:flex-row justify-center md:justify-end bg-white dark:bg-gray-900 px-2 md:px-10">
+      <div className="formfoodies flex flex-col md:flex-row justify-center md:justify-end bg-white dark:bg-gray-900 overflow-hidden px-4 md:px-10">
         
         <ContactForm></ContactForm>
       </div>

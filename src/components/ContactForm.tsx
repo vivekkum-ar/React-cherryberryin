@@ -82,9 +82,10 @@ if (!serviceId || !templateId || !publicKey) {
      {showAlert && (
 <div id="" className="fixed z-40 w-84 top-5 items-center p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400 border border-dark-500" role="alert">
 
-<span className="sr-only">Info</span>
-<div className="ms-3 text-sm font-medium">
+<div className="align-items-center flex flex-row ms-3 text-sm font-medium">
+  <div className="1">
 <strong>✔️ Submitted !</strong> We have received your input, and we'll get back to you. Please check your email. &nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
 <button type="button" onClick={() => setShowAlert(false)} className="inline ms-2 -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700" data-dismiss-target="#alert-3" aria-label="Close">
   <span className="sr-only">Close</span>
   <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">

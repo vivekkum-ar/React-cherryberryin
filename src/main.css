@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+#root {
     /* overflow-x: hidden; */
+    width: 100vw;
 }
 
 .font-pacifico {
