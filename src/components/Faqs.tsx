@@ -1,6 +1,33 @@
 import { useState } from "react"
 
-const Faqs = () => {
+interface faqProps{
+ faqs?:any;
+}
+
+const faq:any = [
+    {
+      "question": "What services does Cherry Berry offer?",
+      "answer": "Cherry Berry provides a range of services, including web development, design, and digital marketing. Explore our expertise to elevate your online presence."
+    },
+    {
+      "question": "Is there a free trial available?",
+      "answer": "Yes, we offer a free trial period for our services. Sign up to experience our offerings firsthand before making a commitment."
+    },
+    {
+      "question": "Do I need technical expertise to use Cherry Berry's services?",
+      "answer": "No technical expertise required! Our user-friendly platform and expert guidance make it easy for anyone to build and manage a professional website."
+    },
+    {
+      "question": "Is there ongoing support after the website is live?",
+      "answer": "Yes, we provide ongoing support for website maintenance and updates. Our team is ready to assist you in keeping your site optimized and up-to-date."
+    },
+    {
+      "question": "How secure is my website with Cherry Berry?",
+      "answer": "Security is a top priority. We implement industry-standard security measures to protect your website and user data. Rest assured, your online presence is in safe hands."
+    }
+  ]
+const Faqs:React.FC<faqProps> = ({ faqs = faq }) => {
+
 
     // useEffect(() => {
     //     document.querySelectorAll('[id^="question"]').forEach(function(button, index) {
@@ -20,7 +47,7 @@ const Faqs = () => {
     //         });
     //     });
     // }, [])
-    const [openPanelIndex, setopenPanelIndex] = useState([false,false,false,false]);
+    const [openPanelIndex, setopenPanelIndex] = useState(Array.from({ length: faqs.length }, () => false));
     
 
   return (
@@ -34,56 +61,19 @@ const Faqs = () => {
         {/* <p className="faqs-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p> */}
       </div>
     <div className="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
-      <div className="transition-all duration-200 bg-white border border-gray-200 shadow-xl dark:bg-gray-800 cursor-pointer hover:bg-gray-50">
-        <button type="button" onClick={() => {setopenPanelIndex(prevState => prevState.map((value, index) => index === 0 ? !value : value));}} id="question1" data-state="closed" className="flex items-center justify-between w-full px-4 py-5 sm:p-6">
-          <span className="flex text-lg font-semibold  dark:text-white text-black">How can I get started?</span>
-          <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className={`${openPanelIndex[0] == true ? "rotate-180" : "rotate-0"} w-6 h-6 text-gray-400`}>
+    {faqs.map((faq:any, index:number) => (
+      <div key={index} className="transition-all duration-200 bg-white border border-gray-200 shadow-xl dark:bg-gray-800 cursor-pointer hover:bg-gray-50">
+        <button type="button" onClick={() => {setopenPanelIndex(prevState => prevState.map((value, id) => id === index ? !value : value));}} id="question1" data-state="closed" className="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+          <span className="flex text-lg font-semibold  dark:text-white text-black">{faq.question}</span>
+          <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className={`${openPanelIndex[index] == true ? "rotate-180" : "rotate-0"} w-6 h-6 text-gray-400`}>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        <div id="answer1" className={`${openPanelIndex[0] == true ? "" : "hidden"} px-4 pb-5 sm:px-6 sm:pb-6  dark:text-white`}>
-          <p>Getting started is easy! Sign up for an account, and you'll have access to our platform's
-            features. No credit card required for the initial signup.</p>
+        <div id="answer1" className={`${openPanelIndex[index] == true ? "" : "hidden"} px-4 pb-5 sm:px-6 sm:pb-6  dark:text-white`}>
+          <p>{faq.answer}</p>
         </div>
       </div>
-      <div className="transition-all duration-200 bg-white border border-gray-200 shadow-xl dark:bg-gray-800 cursor-pointer hover:bg-gray-50">
-        <button type="button" onClick={() => {setopenPanelIndex(prevState => prevState.map((value, index) => index === 1 ? !value : value));}} id="question2" data-state="closed" className="flex items-center justify-between w-full px-4 py-5 sm:p-6">
-          <span className="flex text-lg font-semibold  dark:text-white text-black">What is the pricing structure?</span>
-          <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className={`${openPanelIndex[1] == true ? "rotate-180" : "rotate-0"} w-6 h-6 text-gray-400`}>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div id="answer2" className={`${openPanelIndex[1] == true ? "" : "hidden"} px-4 pb-5 sm:px-6 sm:pb-6  dark:text-white`}>
-          <p>Our pricing structure is flexible. We offer both free and paid plans. You can choose the one
-            that
-            suits your needs and budget.</p>
-        </div>
-      </div>
-      <div className="transition-all duration-200 bg-white border border-gray-200 shadow-xl dark:bg-gray-800 cursor-pointer hover:bg-gray-50">
-        <button type="button" onClick={() => {setopenPanelIndex(prevState => prevState.map((value, index) => index === 2 ? !value : value));}} id="question3" data-state="closed" className="flex items-center justify-between w-full px-4 py-5 sm:p-6">
-          <span className="flex text-lg font-semibold  dark:text-white text-black">What kind of support do you provide?</span>
-          <svg id="arrow3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className={`${openPanelIndex[2] == true ? "rotate-180" : "rotate-0"} w-6 h-6 text-gray-400`}>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div id="answer3" className={`${openPanelIndex[2] == true ? "" : "hidden"} px-4 pb-5 sm:px-6 sm:pb-6  dark:text-white`}>
-          <p>We offer comprehensive customer support. You can reach out to our support team through
-            various
-            channels, including email, chat, and a knowledge base.</p>
-        </div>
-      </div>
-      <div className="transition-all duration-200 bg-white border border-gray-200 shadow-xl dark:bg-gray-800 cursor-pointer hover:bg-gray-50">
-        <button type="button" onClick={() => {setopenPanelIndex(prevState => prevState.map((value, index) => index === 3 ? !value : value));}} id="question4" data-state="closed" className="flex items-center justify-between w-full px-4 py-5 sm:p-6">
-          <span className="flex text-lg font-semibold  dark:text-white text-black">Can I cancel my subscription anytime?</span>
-          <svg id="arrow4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className={`${openPanelIndex[3] == true ? "rotate-180" : "rotate-0"} w-6 h-6 text-gray-400`}>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div id="answer4" className={`${openPanelIndex[3] == true ? "" : "hidden"} px-4 pb-5 sm:px-6 sm:pb-6  dark:text-white`}>
-          <p>Yes, you can cancel your subscription at any time without any hidden fees. We believe in
-            providing a hassle-free experience for our users.</p>
-        </div>
-      </div>
+      ))}
     </div>
     <p className="text-center text-gray-600 dark:text-white textbase mt-9">
       Still have questions? 
