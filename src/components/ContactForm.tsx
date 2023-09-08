@@ -114,10 +114,10 @@ if (!serviceId || !templateId || !publicKey) {
       //   </div>
       //   </div>
        )} 
-    <div className="h-screen w-screen md:mt-32" style={{ backgroundImage: `url("./images/undraw_agreement_re_d4dv.svg")`, backgroundRepeat: "no-repeat", backgroundSize: "contain" }}> 
+    <div className="contact-card-title h-screen w-screen md:mt-32" style={{ backgroundImage: `url("./images/undraw_agreement_re_d4dv.svg")`, backgroundRepeat: "no-repeat", backgroundSize: "contain" }}> 
     </div>
 
-    <div className="col-md-7 md:p-5 p-3 p-xs-2 md:me-2 col-lg-6 text-black dark:text-white relative md:static -top-96 md:top-0 fw-bolder contact-fp-div md:my-5">
+    <div className="contact-card-title col-md-7 md:p-5 p-3 p-xs-2 md:me-2 col-lg-6 text-black dark:text-white relative md:static -top-96 md:top-0 fw-bolder contact-fp-div md:my-5">
       {/* <h4 className="mb-3 fw-bolder display-6 font-bg">
         Contact Form
       </h4> */}

@@ -236,7 +236,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           opacity: 0,
           y: "30px",
           // duration: 1,
-          stagger: 1,
+          stagger: 0.5,
         });
       let tl7 = gsap.timeline({
         scrollTrigger: {
@@ -282,13 +282,13 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         }});
         tl9.from(".timelinecard", {
           opacity: 0,
-          y: "30px",
+          x: "30px",
           // duration: 1,
           stagger: 0.5,
         });
       let tl10 = gsap.timeline({
         scrollTrigger: {
-          trigger: ".parent-faqs-card-title",
+          trigger: ".parent-faqs-title",
           start: "top center",
           end: "bottom bottom-=20%",
           toggleActions: "play none none none",
@@ -296,9 +296,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           // scrub: true,
           // pin:true,
         }});
-        tl10.from(".faqs-card-title", {
+        tl10.from(".faqs-title", {
           opacity: 0,
-          x: "30px",
+          y: "30px",
           // duration: 1,
           stagger: 0.5,
         });
@@ -314,9 +314,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         }});
         tl11.from(".contact-card-title", {
           opacity: 0,
-          x: "30px",
+          y: "30px",
           // duration: 1,
-          stagger: 0.5,
+          stagger: 0.3,
         });
     });
 
