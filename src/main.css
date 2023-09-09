@@ -24,6 +24,11 @@
     --main-color: #fe9736;
 }
 
+.no-highlight {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
 .pricingTable.Table-light {
     /* color: #fff; */
     background: linear-gradient(#fff, #fff, var(--main-color), #fff, #fff);

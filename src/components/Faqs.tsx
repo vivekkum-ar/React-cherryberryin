@@ -62,7 +62,7 @@ const Faqs:React.FC<faqProps> = ({ faqs = faq }) => {
       </div>
     <div className="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
     {faqs.map((faq:any, index:number) => (
-      <div key={index} className="transition-all duration-200 bg-white border border-gray-200 shadow-xl dark:bg-gray-800 cursor-pointer hover:bg-gray-50">
+      <div key={index} className="no-highlight transition-all duration-200 bg-white border border-gray-200 shadow-xl dark:bg-gray-800 cursor-pointer hover:bg-gray-50">
         <button type="button" onClick={() => {setopenPanelIndex(prevState => prevState.map((value, id) => id === index ? !value : value));}} id="question1" data-state="closed" className="flex items-center justify-between w-full px-4 py-5 sm:p-6">
           <span className="flex text-lg font-semibold  dark:text-white text-black">{faq.question}</span>
           <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className={`${openPanelIndex[index] == true ? "rotate-180" : "rotate-0"} w-6 h-6 text-gray-400`}>

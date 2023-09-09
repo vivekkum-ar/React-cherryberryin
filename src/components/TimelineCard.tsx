@@ -11,14 +11,14 @@ const TimelineCard: React.FC<TimelineCardProps> = (props) => {
     const { Title, Description } = props; //Destructuring Title, Description = props = title, description(from parent)
   return (
     <section className=" md:h-84 pb-12 dark:bg-gray-900">
-            <div className="parent-neumorph flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
-        {/* <div className="neumorph -trigger absolute border-lg border-red-500">
+            <div className="parent-timeline-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+        {/* <div className="timeline-title -trigger absolute border-lg border-red-500">
         </div> */}
-        <p className="my-5 font-bg text-center neumorph  dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
+        <p className="my-5 font-bg text-center timeline-title  dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
           {Title}
         </p>
-        <hr className="neumorph  w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
-        <p className="neumorph  mb-8 px-4 md:px-20 text-center text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">{Description}</p>
+        <hr className="timeline-title  w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
+        <p className="timeline-title  mb-8 px-4 md:px-20 text-center text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">{Description}</p>
       </div>
         <div className="overflow-visible  grid grid-rows-3 sm:grid-rows-1 gap-y-0 px-5 sm:grid-cols-4 sm:gap-x-8">
 

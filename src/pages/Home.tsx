@@ -22,9 +22,12 @@ interface HomeProps {
   updateTheme: Function;
 }
 const Home: React.FC<HomeProps> = ({ theme }) => {
+
   const [ModalVisible, setModalVisible] = useState(false);
   const [indexOfColl, setindexOfColl] = useState(0);
   const [Progress, setProgress] = useState(0);
+
+/* --------- Check and arrange overflow of body if modal is visible --------- */
 
   useEffect(() => {
     // Add or remove the class based on modal visibility
@@ -41,30 +44,32 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
     };
   }, [ModalVisible]);
 
-  useEffect(() => {
-    let tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".trigger-main",
-        start: "top top",
-        end: "bottom+=50% 20%",
-        toggleActions: "play none none none",
-        // markers: true,
-        scrub: true,
-        // pin:true,
-      },
-    });
-    tl2.fromTo(
-      ".one-by-one",
-      { color: theme != "dark" ? 'black' : 'white' }, // Start with grey text color
-      {
-        color: "grey", // End with white text color
-        duration: 1, // Animation duration in seconds
-        stagger: 0.5, // Delay between each word animation
-      }
-    );
+/* ------------------------ useEffect on theme change ----------------------- */
+
+  // useEffect(() => {
+    // let tl2 = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".trigger-main",
+    //     start: "top top",
+    //     end: "bottom+=50% 20%",
+    //     toggleActions: "play none none none",
+    //     // markers: true,
+    //     scrub: true,
+    //     // pin:true,
+    //   },
+    // });
+    // tl2.fromTo(
+    //   ".one-by-one",
+    //   { color: theme != "dark" ? 'black' : 'white' }, // Start with grey text color
+    //   {
+    //     color: `${theme != "dark" ? 'white' : 'black'}`, // End with white text color
+    //     duration: 0.5, // Animation duration in seconds
+    //     stagger: 0.1, // Delay between each word animation
+    //   }
+    // );
 
     // console.log("changed to:",theme);
-  }, [theme])
+  // }, [theme])
 
 
   const lottieRef = useRef<HTMLDivElement>(null);
@@ -72,8 +77,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
   useEffect(() => {
     document.body.style.overflowX = 'hidden';
 
-    let mm = gsap.matchMedia();
-    // var animDuration = 10000;
+/* ------------------ Initializing lottie using lottie-web ------------------ */
     const anim = lottie.loadAnimation({
       container: lottieRef.current!,
       renderer: "svg",
@@ -83,6 +87,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       animationData,
     });
 
+    /* -- Function that animates the lottie animation based on scroll position -- */
+
     function animatebodymovin(duration: number, scrollPosition: number) {
       const maxFrames = anim.totalFrames;
 
@@ -91,23 +97,28 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
       anim.goToAndStop(frame, true);
     }
-    /* ------------------------- initializing animation ------------------------- */
+
+    /* ---------------- Setting initial frame of lottie animation --------------- */
     anim.goToAndStop(7.5, true);
-    gsap.to(".card-woman", {
+
+    /* ------------------ Scroll Trigger for lottie animation ------------------ */
+    gsap.to(".anything-here", {
       scrollTrigger: {
         trigger: "#red-trigger",
         start: "top+=5% top",
         end: "bottom 20%",
         onUpdate: (self) => {
           // console.log("progress:", self.progress);
-          animatebodymovin(500, self.progress * 1000);
+          animatebodymovin(300, self.progress * 1000);
         },
         toggleActions: "play none none none",
         // markers: true,
       },
     });
 
+    let mm = gsap.matchMedia();
     mm.add("(min-width: 768px)", () => {
+      /* -------- ScrollTrigger for text animation - Envision,engage,excel -------- */
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".lottie-trigger",
@@ -122,9 +133,10 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       tl.to(".para-1", { opacity: 0, x: 20 });
       tl.to(".para-2", { opacity: 1, x: 20, });
 
+      /* ------------ ScrollTrigger for text animation -your business,our website expertise ----------- */
       let tl3 = gsap.timeline({
         scrollTrigger: {
-          trigger: ".parent-build-animate",
+          trigger: ".parent-svg-title",
           start: "top center+=30%",
           end: "bottom+=150% bottom",
           toggleActions: "play none none none",
@@ -133,16 +145,17 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           // pin:true,
         },
       });
-      tl3.from(".build-animate", {
+      tl3.from(".svg-title", {
         opacity: 0,
         y: "30px",
         // duration: 1,
         stagger: 0.5,
       });
 
+      /* ----------- ScrollTrigger for text animation -Website that grows with your business ---------- */
       let tl6 = gsap.timeline({
         scrollTrigger: {
-          trigger: ".parent-neumorph",
+          trigger: ".parent-timeline-title",
           start: "top center+=30%",
           end: "bottom+=150% bottom",
           toggleActions: "play none none none",
@@ -151,14 +164,14 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           // pin:true,
         },
       });
-      tl6.from(".neumorph", {
+      tl6.from(".timeline-title", {
         opacity: 0,
         y: "30px",
         // duration: 1,
         stagger: 0.5,
       });
 
-
+      /* -------------------------- ScrollTrigger for pricing cards animation ------------------------- */
       let tl4 = gsap.timeline({
         scrollTrigger: {
           trigger: ".demo",
@@ -178,6 +191,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         stagger: 0.5,
       })
 
+      /* ------------------------ Initializing animation for svg using anime.js ----------------------- */
       var animation = anime({
         targets: '#demo-svg path',
         strokeDashoffset: [anime.setDashoffset, 0],
@@ -193,6 +207,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         }
       });
 
+      /* --------------------- gsap ScrollTrigger for animating svg using anime.js -------------------- */
       gsap.to("#demo-svg", {
         scrollTrigger: {
           trigger: "#demo-svg",
@@ -211,6 +226,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       });
       // let tmp = 0;
       // let max =0;
+      /* -------------------------- ScrollTrigger for example cards animation ------------------------- */
       let tl5 = gsap.timeline({
         scrollTrigger: {
           trigger: ".card-parent-ourWork-card",
@@ -239,6 +255,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         // duration: 1,
         stagger: 0.5,
       });
+
+      /* --------------------- ScrollTrigger for animation of title of example cards --------------------- */
       let tl7 = gsap.timeline({
         scrollTrigger: {
           trigger: ".card-parent-examples-title",
@@ -256,6 +274,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         // duration: 1,
         stagger: 0.5,
       });
+
+      /* -------------------- ScrollTrigger for animation of title of pricing cards ------------------- */
       let tl8 = gsap.timeline({
         scrollTrigger: {
           trigger: ".parent-pricing-card-title",
@@ -273,6 +293,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         // duration: 1,
         stagger: 0.5,
       });
+
+      /* ------------------- ScrollTrigger for animation of title of timeline cards ------------------- */
       let tl9 = gsap.timeline({
         scrollTrigger: {
           trigger: ".parent-timelinecard",
@@ -290,6 +312,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         // duration: 1,
         stagger: 0.5,
       });
+
+      /* ------------------- ScrollTrigger for animation of title of faqs cards ------------------- */
       let tl10 = gsap.timeline({
         scrollTrigger: {
           trigger: ".parent-faqs-title",
@@ -307,6 +331,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         // duration: 1,
         stagger: 0.5,
       });
+
+      /* ------------------- ScrollTrigger for animation of title of contact cards ------------------- */
       let tl11 = gsap.timeline({
         scrollTrigger: {
           trigger: ".parent-contact-card-title",
@@ -327,19 +353,21 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
     });
 
     return () => {
+      /* ------------------------------------ Cleanup of lottie-web ----------------------------------- */
       anim.destroy();
     };
   }, []);
 
   return (
     <>
-      <Modal ModalVisible={ModalVisible} updateModalVisible={setModalVisible} indexOfColl={indexOfColl}></Modal>
+{/* ----------------------------- Modal for previewing example sites ----------------------------- */}
+<Modal ModalVisible={ModalVisible} updateModalVisible={setModalVisible} indexOfColl={indexOfColl}></Modal>
 
-
+{/* ---------------------------------------- Hero Section ---------------------------------------- */}
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col justify-center">
-            <h1 className="trigger-main font-bg mb-4 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-black dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry <img src="/images/logo.png" className="inline-block h-10 md:h-16 mr-3" alt="cherry-berry.in Logo" /> </span></h1>
+            <h1 className="trigger-main font-bg mb-4 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry <img src="/images/logo.png" className="inline-block h-10 md:h-16 mr-3" alt="cherry-berry.in Logo" /> </span></h1>
             <p className="mb-8 text-lg text-justify font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
               <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
@@ -359,6 +387,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         </div>
       </section>
 
+{/* ---------------------------------- Lottie animation section ---------------------------------- */}
       <section className="">
         <div className="bg-white dark:bg-gray-900 w-full top-66 flex flex-col-reverse md:flex-row md:px-32 items-center justify-center lottie-trigger">
           <div className="h-[500px] grow lottie-were-cb" ref={lottieRef}></div>
@@ -373,13 +402,14 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         </div>
       </section>
 
+{/* ------------------------------- Svg anime.js animation section ------------------------------- */}
       <section className="">
-        <div className="parent-build-animate flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
-          <p className="my-5 font-bg text-center build-animate dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
+        <div className="parent-svg-title flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+          <p className="my-5 font-bg text-center svg-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
             Your Business, Our Website Expertise
           </p>
-          <hr className="build-animate w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
-          <p className="build-animate mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Unlocking digital success: We expertly blend design, strategy, and technology, ensuring your website achieves goals and captivates your audience. 🚀</p>
+          <hr className="svg-title w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
+          <p className="svg-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Unlocking digital success: We expertly blend design, strategy, and technology, ensuring your website achieves goals and captivates your audience. 🚀</p>
         </div>
 
         <div className="bg-white dark:bg-gray-900">
@@ -399,7 +429,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         </div>
       </section>
 
-
+{/* ------------------------------------ Example sites section ----------------------------------- */}
       <section className="md:mt-20 mt-10">
         <div className="card-parent-examples-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
           <p className="my-5 font-bg text-center examples-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
@@ -408,30 +438,24 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           <hr className="examples-title w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
           <p className="examples-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Discover the power of transformative web design. Explore our diverse portfolio, and elevate your brand's online presence with innovative solutions that captivate and convert.</p>
         </div>
-
-
-
-
-
         <div className=" dark:text-white bg-white dark:bg-gray-900 overflow-hidden" >
           {/* <!-- https://gist.github.com/goodreds/3579ddfffe439457b5ef9902b5336124 --> */}
           <div className="card-parent-ourWork-card dark:text-white bg-white dark:bg-gray-900 flex flex-col justify-center max-w-6xl px-4 mx-auto sm:px-6">
-
             <div className="flex flex-wrap -mx-4">
-              <Card id={0} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Westmire Headset" description="Explore cutting-edge audio technology with Westmire Headset. Immerse yourself in high-quality sound for an unparalleled listening experience."></Card>
-              <Card id={1} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Diya Modern Kitchen" description="Diya Modern Kitchen brings innovation to your culinary space. Discover contemporary designs and smart solutions for a stylish and functional kitchen." category="Technology Startup"></Card>
-              <Card id={2} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Portfolio Ravi" description="Ravi's portfolio showcases a creative journey. Dive into a world of design, development, and artistry, reflecting passion and expertise." category="Technology Startup"></Card>
+              <Card id={0} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Westmire Headset" description="Explore cutting-edge audio technology with Westmire Headset. Immerse yourself in high-quality sound for an unparalleled listening experience." category="Product Website"></Card>
+              <Card id={1} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Diya Modern Kitchen" description="Diya Modern Kitchen brings innovation to your culinary space. Discover contemporary designs and smart solutions for a stylish and functional kitchen." category="Restaurant Startup"></Card>
+              <Card id={2} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Portfolio Ravi" description="Ravi's portfolio showcases a creative journey. Dive into a world of design, development, and artistry, reflecting passion and expertise." category="Portfolio"></Card>
             </div>
             <div className="hidden md:flex flex-wrap -mx-4">
-              <Card id={3} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Portfolio Arjun" description="Arjun's portfolio is a visual narrative of skills and achievements. Experience a blend of creativity, technology, and expertise through impressive projects."></Card>
-              <Card id={4} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Bodybuild Fitness" description="Transform your fitness journey with Bodybuild Fitness. Personalized training, nutrition guidance, and a supportive community await you on the path to wellness." category="Technology Startup"></Card>
-              <Card id={5} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Daliwal Dutta Web-Dev" description="Explore a portfolio of websites that combine functionality, aesthetics, and seamless user experiences." category="Technology Startup"></Card>
+              <Card id={3} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Portfolio Arjun" description="Arjun's portfolio is a visual narrative of skills and achievements. Experience a blend of creativity, technology, and expertise through impressive projects." category="Portfolio"></Card>
+              <Card id={4} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Bodybuild Fitness" description="Transform your fitness journey with Bodybuild Fitness. Personalized training, nutrition guidance, and a supportive community await you on the path to wellness." category="Gym Website"></Card>
+              <Card id={5} setIndexOfColl={setindexOfColl} indexOfColl={indexOfColl} ModalVisible={ModalVisible} updateModalVisible={setModalVisible} title="Daliwal Dutta Web-Dev" description="Explore a portfolio of websites that combine functionality, aesthetics, and seamless user experiences." category="Web-Developer"></Card>
             </div>
           </div>
         </div>
       </section>
 
-
+{/* --------------------------------------- Pricing Section -------------------------------------- */}
       <section className="md:mt-20 mt-4">
         <TimelineCard Title="From start to growth" Description="Embark on a journey from startup to success with our comprehensive guides and tools. Build, grow, and thrive with expert assistance every step of the way." />
       </section>
@@ -444,15 +468,15 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           <hr className="faqs-card-title w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
           <p className="faqs-card-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Explore our tailored packages – Standard, Business, Premium. Choose the perfect plan for your needs, each offering unique features. Elevate your business at competitive prices with Cherry Berry.</p>
         </div>
-
-
         <PricingCards theme={theme}></PricingCards>
       </section>
 
+{/* ----------------------------------------- FAQ Section ---------------------------------------- */}
       <section>
         <Faqs></Faqs>
       </section>
 
+{/* --------------------------------------- Contact Section -------------------------------------- */}
       <section className="md:mb-20 mb-0 md:mt-20 mt-10">
         <div className="parent-contact-card-title flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
           <p className="my-5 font-bg text-center contact-card-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
