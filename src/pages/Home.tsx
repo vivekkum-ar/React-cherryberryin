@@ -373,13 +373,13 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             <h1 className="trigger-main font-bg mb-4 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry <img src="/images/logo.png" className="inline-block h-10 md:h-16 mr-3" alt="cherry-berry.in Logo" /> </span></h1>
             <p className="mb-8 text-lg text-justify font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-              <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+              <a href="home#parent-contact-card-title" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                 Contact us
                 <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 5h12m0 0L9 1m4 4L9 9" />
                 </svg>
               </a>
-              <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+              <a href="about" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                 About us
               </a>
             </div>
@@ -464,7 +464,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       </section>
 
       <section className="">
-        <div className="parent-pricing-card-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+        <div id="parent-pricing-card-title" className="parent-pricing-card-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
           <p className="my-5 font-bg text-center pricing-card-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
             Select your package
           </p>
@@ -481,7 +481,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
 {/* --------------------------------------- Contact Section -------------------------------------- */}
       <section className="md:mb-20 mb-0 md:mt-20 mt-10">
-        <div className="parent-contact-card-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+        <div id="parent-contact-card-title" className="parent-contact-card-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
           <p className="my-5 font-bg text-center contact-card-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
             Contact Us
           </p>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { StandardPackIcon, BusinessPackIcon, PremiumPackIcon } from './iconify';
 
 interface PricingCards{
@@ -26,14 +27,14 @@ const PricingCards:React.FC<PricingCards> = ({theme}) => {
                   {/* <span className="amount font-bg overflow-hidden dark:text-white text-gray-900">₹2999/</span> */}
                   {/* <span className="duration font-bg overflow-hidden dark:text-white text-gray-900">month</span> */}
                 </div>
-                <a href="#" className="dark:bg-[#fe9736] bg-[#fe9736] inline-flex justify-center items-center py-2 px-5 font-bold text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                <Link to="contact" className="dark:bg-[#fe9736] bg-[#fe9736] inline-flex justify-center items-center py-2 px-5 font-bold text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                   Contact Us
                   <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 5h12m0 0L9 1m4 4L9 9" />
                   </svg>
-                </a>
+                </Link>
                 {/* <div className="pricingTable-signup">
-            <a href="#">Contact us</a>
+            <Link to="contact">Contact us</a>
           </div> */}
               </div>
             </div>
@@ -54,12 +55,12 @@ const PricingCards:React.FC<PricingCards> = ({theme}) => {
                   <span className="amount font-bg overflow-hidden dark:text-white text-gray-900">₹699/</span>
                   <span className="duration font-bg overflow-hidden dark:text-white text-gray-900">month</span>
                 </div>
-                <a href="#" className="dark:bg-[#f73b3b] bg-[#f73b3b] font-bg font-bold inline-flex justify-center items-center py-2 px-5 text-base text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                <Link to="contact" className="dark:bg-[#f73b3b] bg-[#f73b3b] font-bg font-bold inline-flex justify-center items-center py-2 px-5 text-base text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                   Contact Us
                   <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 5h12m0 0L9 1m4 4L9 9" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="pricing-card md:w-1/3 w-full py-4 px-4">
@@ -78,12 +79,12 @@ const PricingCards:React.FC<PricingCards> = ({theme}) => {
                   <span className="amount font-bg overflow-hidden dark:text-white text-gray-900">Dynamic* </span>
                   <span className="duration font-bg overflow-hidden dark:text-white text-gray-900">Pricing</span>
                 </div>
-                <a href="#" className="dark:bg-[#2AB69C] bg-[#2AB69C] font-bg font-bold inline-flex justify-center items-center py-2 px-5 text-base text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                <Link to="contact" className="dark:bg-[#2AB69C] bg-[#2AB69C] font-bg font-bold inline-flex justify-center items-center py-2 px-5 text-base text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                   Contact Us
                   <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 5h12m0 0L9 1m4 4L9 9" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

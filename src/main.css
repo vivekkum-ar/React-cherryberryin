@@ -759,3 +759,8 @@
     border-top-left-radius: 0; 
     margin-left: -1px;
 } 
+
+
+.service-overflow-hidden{
+    overflow-x: hidden;
+}

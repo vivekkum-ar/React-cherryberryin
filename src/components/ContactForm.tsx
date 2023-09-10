@@ -254,7 +254,7 @@ if (!serviceId || !templateId || !publicKey) {
             required />
           <label className="form-check-label" htmlFor="save-info">
             I agree with the terms and conditions as provided{" "}
-            <Link to="" className="fw-bolder text-primary">
+            <Link to="/legal/terms" className="fw-bolder text-primary">
               here
             </Link>
           </label>
