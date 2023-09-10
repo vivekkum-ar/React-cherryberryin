@@ -451,8 +451,7 @@
     print-color-adjust: exact; 
     vertical-align: top; 
     width: 1em; 
-    background-repeat-x: no-repeat; 
-    background-repeat-y: no-repeat;
+    background-repeat: no-repeat; 
 } 
 
 .formfoodies .form-check .form-check-input  { 
@@ -557,7 +556,8 @@
 } 
 
 .formfoodies [type="submit"],button { 
-    -webkit-appearance: button; 
+    -webkit-appearance: button;
+    appearance: button; 
     background-color: initial; 
     background-image: none;
 } 
@@ -688,8 +688,7 @@
     padding: .375rem 2.25rem .375rem .75rem; 
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
     width: 100%; 
-    background-repeat-x: no-repeat; 
-    background-repeat-y: no-repeat;
+    background-repeat: no-repeat; 
 } 
 
 .formfoodies small { 
@@ -760,6 +759,3 @@
     border-top-left-radius: 0; 
     margin-left: -1px;
 } 
-
-
-/* } */

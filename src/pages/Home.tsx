@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import animationData from "../assets/animation_lo8jcqf0.json";
 import lottie from "lottie-web";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useLayoutEffect } from "react";
 // Supports weights 100-900
 import '@fontsource-variable/outfit';
 import Modal from "../components/Modal";
@@ -13,7 +13,7 @@ import PricingCards from "../components/PricingCards";
 import anime from "animejs/lib/anime.js";
 import ContactForm from "../components/ContactForm";
 import Faqs from "../components/Faqs";
-
+import 'animate.css';
 
 
 interface HomeProps {
@@ -74,7 +74,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
   const lottieRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
     document.body.style.overflowX = 'hidden';
 
 /* ------------------ Initializing lottie using lottie-web ------------------ */
@@ -92,7 +93,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
     function animatebodymovin(duration: number, scrollPosition: number) {
       const maxFrames = anim.totalFrames;
 
-      const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
+      const frame = (maxFrames / 100) * (scrollPosition / (duration / 100)) + 7.5;
       // console.log(`₹{maxFrames} / 100) * (₹{scrollPosition} / (₹{duration} / 100)`);
 
       anim.goToAndStop(frame, true);
@@ -234,7 +235,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           end: "bottom bottom-=20%",
           toggleActions: "play none none none",
           // markers: true,
-          // scrub: true,
+          scrub: true,
           // pin:true,
           // onUpdate: (self) => {
           //   if (self.direction == 1) {
@@ -246,7 +247,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           //   }
           //   console.log("Direction:", self.direction, "Progress:", self.progress, "tl5 progress",tl5.progress());
           // },
-          // onLeave: self => self.kill(false, true),
+          onLeave: self => self.kill(false, true),
         }
       });
       tl5.from(".ourWork-card", {
@@ -302,7 +303,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           end: "bottom bottom",
           toggleActions: "play none none none",
           // markers: true,
-          scrub: true,
+          // scrub: true,
           // pin:true,
         }
       });
@@ -356,6 +357,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       /* ------------------------------------ Cleanup of lottie-web ----------------------------------- */
       anim.destroy();
     };
+  });
+    return () => ctx.revert(); // <- cleanup!
   }, []);
 
   return (
@@ -364,9 +367,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 <Modal ModalVisible={ModalVisible} updateModalVisible={setModalVisible} indexOfColl={indexOfColl}></Modal>
 
 {/* ---------------------------------------- Hero Section ---------------------------------------- */}
-      <section className="bg-white dark:bg-gray-900">
+      <section className=" bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex flex-col justify-center">
+          <div className=" flex flex-col justify-center">
             <h1 className="trigger-main font-bg mb-4 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry <img src="/images/logo.png" className="inline-block h-10 md:h-16 mr-3" alt="cherry-berry.in Logo" /> </span></h1>
             <p className="mb-8 text-lg text-justify font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
@@ -381,7 +384,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
               </a>
             </div>
           </div>
-          <div>
+          <div className="">
             <iframe className="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl" src="https://player.vimeo.com/video/878701144?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
           </div>
         </div>
@@ -404,7 +407,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
 {/* ------------------------------- Svg anime.js animation section ------------------------------- */}
       <section className="">
-        <div className="parent-svg-title flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+        <div className="parent-svg-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
           <p className="my-5 font-bg text-center svg-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
             Your Business, Our Website Expertise
           </p>
@@ -461,12 +464,12 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       </section>
 
       <section className="">
-        <div className="parent-faqs-card-title flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
-          <p className="my-5 font-bg text-center faqs-card-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
+        <div className="parent-pricing-card-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+          <p className="my-5 font-bg text-center pricing-card-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
             Select your package
           </p>
-          <hr className="faqs-card-title w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
-          <p className="faqs-card-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Explore our tailored packages – Standard, Business, Premium. Choose the perfect plan for your needs, each offering unique features. Elevate your business at competitive prices with Cherry Berry.</p>
+          <hr className="pricing-card-title w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
+          <p className="pricing-card-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Explore our tailored packages – Standard, Business, Premium. Choose the perfect plan for your needs, each offering unique features. Elevate your business at competitive prices with Cherry Berry.</p>
         </div>
         <PricingCards theme={theme}></PricingCards>
       </section>
@@ -478,7 +481,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
 {/* --------------------------------------- Contact Section -------------------------------------- */}
       <section className="md:mb-20 mb-0 md:mt-20 mt-10">
-        <div className="parent-contact-card-title flex flex-col place-content-center bg-white dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+        <div className="parent-contact-card-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
           <p className="my-5 font-bg text-center contact-card-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
             Contact Us
           </p>
