@@ -1,5 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import CardofService from '../components/CardsofService'
+import { services } from '../components/Content';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 interface ServicesProps {
   // Add your prop types here
@@ -11,6 +16,7 @@ const Services: React.FC<ServicesProps> = ({}) => {
 
   useEffect(() => {
       document.body.style.overflowX = 'hidden';
+
     // Cleanup effect
     return () => {
       document.body.style.overflowY = 'auto';
@@ -46,20 +52,29 @@ const Services: React.FC<ServicesProps> = ({}) => {
     </div>
   </div>
 </div>
+
+<div id="parent-services-page-title" className="parent-services-page-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+          <p className="my-5 font-bg text-center services-page-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
+          Comprehensive Web Solutions
+          </p>
+          <hr className="services-page-title w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
+          <p className="services-page-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Explore the extensive array of services we offer, thoughtfully crafted to meet diverse requirements, guaranteeing a seamless and flourishing online experience.</p>
+        </div>
+
     <div className="max-w-screen-lg mx-auto">
-      
-      <div className="grid grid-cols-3 gap-8 grid-rows-3 mb-20">
-      <CardofService title={"title title title title"} description={"asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd"} />
-      <CardofService title={"title title title title"} description={"asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd"} />
-      <CardofService title={"title title title title"} description={"asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd"} />
-      <CardofService title={"title title title title"} description={"asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd"} />
-      <CardofService title={"title title title title"} description={"asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd"} />
-      <CardofService title={"title title title title"} description={"asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd"} />
-      <CardofService title={"title title title title"} description={"asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd"} />
-      <CardofService title={"title title title title"} description={"asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd"} />
-      <CardofService title={"title title title title"} description={"asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd asdasdsadsa asdasdsadsa asdsadsdsd"} />
+      <div className="parent-services-page-card grid md:grid-cols-3 md:gap-8 md:grid-rows-3 grid-cols-2 gap-2 grid-rows-3 md:mb-20 mb-6 mr-4">
+      {services.map((service, index) => (
+      <CardofService key={index} title={service.service} description={service.description} />
+    ))
+  }
+  {/* return null // If index is greater than or equal to 9, render nothing (or handle it as needed). */}
+
       </div>
     </div>
+    
+
+
+    
     </>
   )
 }

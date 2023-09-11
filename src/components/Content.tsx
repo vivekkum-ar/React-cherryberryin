@@ -5,10 +5,6 @@ export const services:any[] = [
           "description": "Elevate engagement with our expertly crafted mobile applications for seamless user experiences and functionality."
         },
         {
-          "service": "Content Management System (CMS)",
-          "description": "Manage content effortlessly with our intuitive CMS, enhancing your site's flexibility and scalability."
-        },
-        {
           "service": "WordPress",
           "description": "Harness the power of WordPress for dynamic, customizable websites that reflect your brand's unique identity."
         },
@@ -39,6 +35,42 @@ export const services:any[] = [
         {
           "service": "Website Migration",
           "description": "Seamlessly transfer your website with our migration services, ensuring a smooth transition without disruptions."
+        },
+        {
+          "service": "Full Stack",
+          "description": "Comprehensive web solutions—design, development, and functionality for a seamless user experience."
+        },
+        {
+          "service": "SEO Optimization",
+          "description": "Boost online visibility and reach with strategic SEO techniques for higher search engine rankings."
+        },
+        {
+          "service": "Social Media Integration",
+          "description": "Seamlessly connect your website to social platforms, enhancing engagement and expanding your audience."
+        },
+        {
+          "service": "Web Hosting",
+          "description": "Reliable hosting solutions, ensuring optimal performance, security, and accessibility for your website."
+        },
+        {
+          "service": "Domain Registration",
+          "description": "Secure your online identity with easy and efficient domain registration services tailored to your needs."
+        },
+        {
+          "service": "Microsite",
+          "description": "Create focused and impactful microsites, delivering targeted content for specific campaigns or promotions."
+        },
+        {
+          "service": "Enterprise Web",
+          "description": "Tailored web development for large-scale enterprises, ensuring robust functionality and scalability."
+        },
+        {
+          "service": "Blog",
+          "description": "Engage your audience with a dynamic blog platform, fostering communication and sharing valuable content."
+        },
+        {
+          "service": "Forum",
+          "description": "Foster community engagement with a dedicated forum, facilitating discussions and building a loyal audience."
         }
       ];
 

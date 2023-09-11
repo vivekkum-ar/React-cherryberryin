@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {faq} from "./ContentJSON";
+import {faq} from "./Content";
 interface faqProps{
  faqs?:any;
 }
