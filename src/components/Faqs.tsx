@@ -1,31 +1,10 @@
 import { useState } from "react"
-
+import {faq} from "./ContentJSON";
 interface faqProps{
  faqs?:any;
 }
 
-const faq:any = [
-    {
-      "question": "What services does Cherry Berry offer?",
-      "answer": "Cherry Berry provides a range of services, including web development, design, and digital marketing. Explore our expertise to elevate your online presence."
-    },
-    {
-      "question": "Is there a free trial available?",
-      "answer": "Yes, we offer a free trial period for our services. Sign up to experience our offerings firsthand before making a commitment."
-    },
-    {
-      "question": "Do I need technical expertise to use Cherry Berry's services?",
-      "answer": "No technical expertise required! Our user-friendly platform and expert guidance make it easy for anyone to build and manage a professional website."
-    },
-    {
-      "question": "Is there ongoing support after the website is live?",
-      "answer": "Yes, we provide ongoing support for website maintenance and updates. Our team is ready to assist you in keeping your site optimized and up-to-date."
-    },
-    {
-      "question": "How secure is my website with Cherry Berry?",
-      "answer": "Security is a top priority. We implement industry-standard security measures to protect your website and user data. Rest assured, your online presence is in safe hands."
-    }
-  ]
+
 const Faqs:React.FC<faqProps> = ({ faqs = faq }) => {
 
 
