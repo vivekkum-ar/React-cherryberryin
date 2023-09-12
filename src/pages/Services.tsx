@@ -25,6 +25,53 @@ const Services: React.FC<ServicesProps> = ({}) => {
   }, []);
 
 
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      /* ------------------- ScrollTrigger for animation of title of services page ------------------- */
+      let tl13 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".parent-services-page-title",
+          start: "top center",
+          end: "bottom bottom-=20%",
+          toggleActions: "play none none none",
+          // markers: true,
+          // scrub: true,
+          // pin:true,
+        }
+      });
+      tl13.from(".services-page-title", {
+        opacity: 0,
+        y: "30px",
+        // duration: 1,
+        stagger: 0.3,
+      });
+
+      /* ------------------- ScrollTrigger for animation of cards of services page ------------------- */
+      let tl14 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".parent-services-page-card",
+          start: "top center",
+          end: "bottom top",
+          toggleActions: "play complete reverse reset",
+          markers: true,
+          scrub: true,
+          // horizontal: true,
+          // pin:true,
+        }
+      });
+      tl14.from(".services-page-card", {
+        opacity: 0,
+        y: "30px",
+        // duration: 1,
+        // fastScrollEnd: "100px",
+        // preventOverlaps: true,
+        stagger: 1,
+      });
+
+    });
+    return () => ctx.revert(); // <- cleanup!
+  }, []);
+
 
   return (
     <>
