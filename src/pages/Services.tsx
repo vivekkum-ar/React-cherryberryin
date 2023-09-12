@@ -11,6 +11,7 @@ interface ServicesProps {
 }
 
 const Services: React.FC<ServicesProps> = ({}) => {
+  const [More, setMore] = useState(false);
 
   /* --------- Check and arrange overflow of body if modal is visible --------- */
 
@@ -22,6 +23,7 @@ const Services: React.FC<ServicesProps> = ({}) => {
       document.body.style.overflowY = 'auto';
     };
   }, []);
+
 
 
   return (
@@ -63,18 +65,34 @@ const Services: React.FC<ServicesProps> = ({}) => {
 
     <div className="max-w-screen-lg mx-auto">
       <div className="parent-services-page-card grid md:grid-cols-3 md:gap-8 md:grid-rows-3 grid-cols-2 gap-2 grid-rows-3 md:mb-20 mb-6 mr-4">
-      {services.map((service, index) => (
+      {services.map((service, index) => {
+  if (index < 9) {
+    return (
       <CardofService key={index} title={service.service} description={service.description} />
-    ))
+    )
   }
-  {/* return null // If index is greater than or equal to 9, render nothing (or handle it as needed). */}
+  return null // If index is greater than or equal to 9, render nothing (or handle it as needed).
+})}
 
       </div>
     </div>
-    
+    <div className={`rounded-md shadow ${More == true ? "animate__animated animate__fadeOutDown" : ""}`} onClick={() => {setMore(true);}} ><div className="flex w-52 mx-auto items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg">load more</div>
+      </div>
 
 
-    
+    <div className={`max-w-screen-lg mx-auto ${More == false ? "hidden" : "md:block"}`}>
+      <div className="grid md:grid-cols-3 md:gap-8 md:grid-rows-3 grid-cols-2 gap-2 grid-rows-3 md:mb-20 mb-6 mr-4">
+      {services.map((service, index) => {
+  if ((index > 8)) {
+    return (
+      <CardofService key={index} title={service.service} description={service.description} />
+    )
+  }
+  return null // If index is greater than or equal to 9, render nothing (or handle it as needed).
+})}
+
+      </div>
+    </div>
     </>
   )
 }
