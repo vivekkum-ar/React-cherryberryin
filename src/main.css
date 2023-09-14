@@ -277,8 +277,8 @@
 } 
 
 .formfoodies .contact-fp-div { 
-    backdrop-filter: blur(8px); 
-    -webkit-backdrop-filter: blur(8px); 
+    backdrop-filter: blur(2px); 
+    -webkit-backdrop-filter: blur(2px); 
     background: hsla(0,0%,100%,.45); 
     border: 1px solid hsla(0,0%,100%,.18); 
     border-radius: 10px; 
