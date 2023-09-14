@@ -3,6 +3,7 @@ import CardofService from '../components/CardsofService'
 import { services } from '../components/Content';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from 'react-router-dom';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -53,7 +54,7 @@ const Services: React.FC<ServicesProps> = ({}) => {
           start: "top center",
           end: "bottom top",
           toggleActions: "play complete reverse reset",
-          markers: true,
+          // markers: true,
           scrub: true,
           // horizontal: true,
           // pin:true,
@@ -96,7 +97,7 @@ const Services: React.FC<ServicesProps> = ({}) => {
     Craft stunning websites and powerful online experiences effortlessly. CherryBerry empowers your brand with speed, creativity, and unparalleled innovation, making your digital journey extraordinary.
     </p>
     <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
-      <div className="rounded-md shadow"><a className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg" href="#">Get started 🚀</a>
+      <div className="rounded-md shadow"><Link className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg" to="contact">Get started 🚀</Link>
       </div>
     </div>
   </div>
@@ -110,8 +111,8 @@ const Services: React.FC<ServicesProps> = ({}) => {
           <p className="services-page-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Explore the extensive array of services we offer, thoughtfully crafted to meet diverse requirements, guaranteeing a seamless and flourishing online experience.</p>
         </div>
 
-    <div className="max-w-screen-lg mx-auto">
-      <div className="parent-services-page-card grid md:grid-cols-3 md:gap-8 md:grid-rows-3 grid-cols-2 gap-2 grid-rows-3 md:mb-20 mb-6 mr-4">
+    <div className="max-w-screen-lg mx-auto mr-4 md:mr-auto">
+      <div className="parent-services-page-card grid md:grid-cols-3 md:gap-8 md:grid-rows-3 grid-cols-2 gap-2 grid-rows-3">
       {services.map((service, index) => {
   if (index < 9) {
     return (
@@ -123,7 +124,9 @@ const Services: React.FC<ServicesProps> = ({}) => {
 
       </div>
     </div>
-    <div className={`rounded-md shadow ${More == true ? "animate__animated animate__fadeOutDown" : ""}`} onClick={() => {setMore(true);}} ><div className="flex w-52 mx-auto items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg">load more</div>
+
+
+      <div className={`mt-0 mr-4 md:mr-auto rounded-md shadow ${More == true ? "animate__animated animate__fadeOutDown" : ""}`} onClick={() => { setMore(true); }} ><div className="flex w-52 mx-auto items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg">load more</div>
       </div>
 
 
