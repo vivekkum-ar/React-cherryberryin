@@ -8,7 +8,7 @@ import NoPage from './pages/NoPage.tsx';
 import Contact from './pages/Contact.tsx';
 import About from './pages/About.tsx';
 import Services from './pages/Services.tsx';
-import Terms from './pages/legal/Privacy.tsx';
+import Terms from './pages/legal/Terms.tsx';
 import Privacy from './pages/legal/Privacy.tsx';
 
 const App = () => {

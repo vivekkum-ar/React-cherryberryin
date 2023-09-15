@@ -367,10 +367,24 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 <Modal ModalVisible={ModalVisible} updateModalVisible={setModalVisible} indexOfColl={indexOfColl}></Modal>
 
 {/* ---------------------------------------- Hero Section ---------------------------------------- */}
-      <section className=" bg-white dark:bg-gray-900">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className=" flex flex-col justify-center">
-            <h1 className="trigger-main font-bg mb-4 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white pb-3 overflow-hidden "><span className="one-by-one">Empower</span> <span className="one-by-one">Your</span> <span className="one-by-one">Digital</span> <span className="one-by-one">Future</span> <span className="one-by-one">with</span> <span className="one-by-one">CherryBerry <img src="/images/logo.png" className="inline-block h-10 md:h-16 mr-3" alt="cherry-berry.in Logo" /> </span></h1>
+      <section className="bg-white dark:bg-gray-900">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-10 grid lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="flex flex-col justify-center">
+          <h1 className="text-4xl text-center md:text-left mb-5 font-bg font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">
+      <span className="block xl:inline"><span className="mb-1 block">Empower your</span>
+        <span className="bg-gradient-to-r pe-2 from-blue-700 to-red-600 bg-clip-text text-transparent">
+        Digital Future
+        </span>
+      </span>
+      <div className="mt-2">
+        <span className="relative mt-3 whitespace-nowrap text-blue-600"><svg aria-hidden="true" viewBox="0 0 418 42" className="absolute top-3/4 left-0 right-0 m-auto h-[0.58em] w-fit fill-pink-400/50" preserveAspectRatio="none">
+            <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z">
+            </path>
+          </svg>
+          <span className="relative">with CherryBerry<img src="/images/logo.png" className="inline-block h-10 md:h-16 mr-3" alt="cherry-berry.in Logo" /></span>
+        </span>
+      </div>
+    </h1>
             <p className="mb-8 text-lg text-justify font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
               <a href="home#parent-contact-card-title" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">

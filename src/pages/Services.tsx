@@ -80,7 +80,7 @@ const Services: React.FC<ServicesProps> = ({}) => {
   <div className="text-center ">
     <h1 className="text-4xl font-bg font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">
       <span className="block xl:inline"><span className="mb-1 block">Create amazing</span>
-        <span className="bg-gradient-to-r from-indigo-400 to-pink-600 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-blue-700 to-red-600 bg-clip-text text-transparent">
         online experiences
         </span>
       </span>
@@ -97,7 +97,7 @@ const Services: React.FC<ServicesProps> = ({}) => {
     Craft stunning websites and powerful online experiences effortlessly. CherryBerry empowers your brand with speed, creativity, and unparalleled innovation, making your digital journey extraordinary.
     </p>
     <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
-      <div className="rounded-md shadow"><Link className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg" to="contact">Get started 🚀</Link>
+      <div className="rounded-md shadow"><Link className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg" to="/contact">Get started 🚀</Link>
       </div>
     </div>
   </div>

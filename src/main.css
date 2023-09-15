@@ -764,3 +764,79 @@
 .service-overflow-hidden{
     overflow-x: hidden;
 }
+
+.testimonial{
+    margin: 0 10px 75px;
+    position: relative;
+  }
+  .testimonial .description{
+    padding: 20px;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    font-size: 24px;
+    font-style: italic;
+    /* color: #000; */
+    margin-bottom: 0;
+  }
+  .testimonial .testimonial-content{
+    padding: 10px 15px;
+    /* background: #fff; */
+    position: absolute;
+    bottom: -75px;
+    right: 20px;
+  }
+  .testimonial .pic{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+  }
+  .testimonial .pic img{
+    width: 100%;
+    height: auto;
+  }
+  .testimonial-content .testimonial-title{
+    font-size: 16px;
+    font-weight: 600;
+    /* margin: 15px 0 0 0; */
+    display: inline-block;
+  }
+  .testimonial-content .testimonial-title small{
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  .owl-theme .owl-controls{
+    text-align: right;
+    margin-top: 20px;
+  }
+  .owl-theme .owl-controls .owl-buttons div{
+    background: #a2a2a2;
+    border-radius: 0;
+    opacity: 1;
+    padding: 5px 10px;
+  }
+  .owl-prev:before,
+  .owl-next:before{
+    content: "\f053";
+    font-family: "Font Awesome 5 Free"; font-weight: 900;
+    color: #fff;
+  }
+  .owl-next:before{
+    content: "\f054";
+  }
+  @media only screen and (max-width: 480px){
+    .testimonial{
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .testimonial .testimonial-content{
+        position: relative;
+        right: 0;
+        bottom: 0;
+    }
+  }
