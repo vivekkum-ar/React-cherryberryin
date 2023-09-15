@@ -53,7 +53,7 @@ const Services: React.FC<ServicesProps> = ({}) => {
           trigger: ".parent-services-page-card",
           start: "top center",
           end: "bottom top",
-          toggleActions: "play complete reverse reset",
+          toggleActions: "play none none none",
           // markers: true,
           scrub: true,
           // horizontal: true,
