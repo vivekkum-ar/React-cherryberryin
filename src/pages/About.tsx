@@ -1,4 +1,4 @@
-
+import Carousel from "./Carousel"
 
 const About = () => {
   return (
@@ -197,7 +197,16 @@ const About = () => {
         </div>
       </section>
 
-
+<section>
+<div id="parent-services-page-title" className="parent-services-page-title flex flex-col place-content-center dark:text-white bg-white dark:bg-gray-900 overflow-hidden">
+          <p className="my-5 font-bg text-center services-page-title dark:text-white bg-white dark:bg-gray-900 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl pb-3 overflow-hidden">
+          Testimonials  
+          </p>
+          <hr className="services-page-title w-60 md:w-fit md:px-60 mb-5 self-center h-0 border-2 border-gray-400" />
+          {/* <p className="services-page-title mb-8 px-4 md:px-20 text-justify text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Explore the extensive array of services we offer, thoughtfully crafted to meet diverse requirements, guaranteeing a seamless and flourishing online experience.</p> */}
+        </div>
+<Carousel></Carousel>
+</section>
 
 
 </>
