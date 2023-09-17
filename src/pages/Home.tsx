@@ -23,6 +23,11 @@ interface HomeProps {
 }
 const Home: React.FC<HomeProps> = ({ theme }) => {
 
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   const [ModalVisible, setModalVisible] = useState(false);
   const [indexOfColl, setindexOfColl] = useState(0);
   const [Progress, setProgress] = useState(0);

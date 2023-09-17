@@ -16,6 +16,10 @@ const About = () => {
   };
 }, []);
 
+useEffect(() => {
+  // Scroll to the top when the component mounts
+  window.scrollTo(0, 0);
+}, []);
 
 useLayoutEffect(() => {
   let ctx = gsap.context(() => {
