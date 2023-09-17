@@ -1,4 +1,4 @@
-import Carousel from "./Carousel"
+import Carousel from "../components/Carousel";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useLayoutEffect } from "react";
