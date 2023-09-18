@@ -7,9 +7,9 @@ interface PricingCards{
 
 const PricingCards:React.FC<PricingCards> = ({theme}) => {
   return (
-    <div className="demo py-2 dark:bg-gray-900 ">
+    <div className="py-2 dark:bg-gray-900 ">
         <div className=" max-w-screen-xl mx-auto">
-          <div className="flex overflow-hidden md:flex-row flex-col md:gap-8 md:mx-20 mx-5 ">
+          <div className="parent-pricing-card flex overflow-hidden md:flex-row flex-col md:gap-8 md:mx-20 mx-5 ">
             <div className="pricing-card md:w-1/3 w-full py-4 px-4 dark:bg-gray-900">
               <div className={`${theme == "light"? "Table-light": "Table-dark"} pricingTable`}>
                 <div className="pricingTable-header">

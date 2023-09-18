@@ -180,14 +180,14 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       /* -------------------------- ScrollTrigger for pricing cards animation ------------------------- */
       let tl4 = gsap.timeline({
         scrollTrigger: {
-          trigger: ".demo",
-          start: "top bottom-=20%",
-          end: "top center-=20%",
+          trigger: ".parent-pricing-card",
+          start: "bottom center+=30%",
+          end: "bottom+=100% bottom",
           toggleActions: "play none none none",
-          // markers: true,
+          markers: true,
           scrub: true,
           // pin:true,
-          onLeave: self => self.kill(false, true),
+          // onLeave: self => self.kill(false, true),
         },
       });
       tl4.from(".pricing-card", {
@@ -224,7 +224,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             animation.seek(self.progress * animation.duration);
           },
           //   toggleActions: "play none none none",
-          markers: true,
+          // markers: true,
           pin: true,
           scrub: true,
         },
