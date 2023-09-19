@@ -15,7 +15,6 @@ import ContactForm from "../components/ContactForm";
 import Faqs from "../components/Faqs";
 import 'animate.css';
 
-
 interface HomeProps {
   // Add your prop types here
   theme: string;
@@ -184,7 +183,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           start: "bottom center+=30%",
           end: "bottom+=100% bottom",
           toggleActions: "play none none none",
-          markers: true,
+          // markers: true,
           scrub: true,
           // pin:true,
           // onLeave: self => self.kill(false, true),

@@ -787,12 +787,14 @@
     right: 20px;
   }
   .testimonial .pic{
-    width: 70px;
-    height: 70px;
+    /* width: 70px; */
+    /* height: 70px; */
     border-radius: 50%;
     overflow: hidden;
     float: left;
     margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   .testimonial .pic img{
     width: 100%;
