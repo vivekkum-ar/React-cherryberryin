@@ -89,7 +89,7 @@ const Navbar: React.FC<navbarProps> = ({theme,updateTheme}) => {
                 <Link onClick={() => { setDropdownvisible(false); }} to="/services" className="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"><span className="mr-2">{LaptopIcon}</span> Services</Link>
               </li>
               <li>
-                <Link onClick={() => { setDropdownvisible(false); }} to="home#parent-pricing-card-title" className="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"><span className="mr-2">{PricingIcon}</span> Pricing</Link>
+                <Link onClick={() => { const element = document.querySelector('.parent-pricing-card-title'); if (element) { element.scrollIntoView({ behavior: 'instant' }); } setDropdownvisible(false);}} to="home#parent-pricing-card-title" className="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"><span className="mr-2">{PricingIcon}</span> Pricing</Link>
               </li>
               <li>
                 <Link onClick={() => { setDropdownvisible(false); }} to="contact" className="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"><span className="mr-2">{PhoneRoundedIcon}</span> Contact</Link>
@@ -128,7 +128,7 @@ const Navbar: React.FC<navbarProps> = ({theme,updateTheme}) => {
       <button type="button" onClick={handleButtonClick} className={`theme-button animate__animated animate__fast ${rotateClass} absolute top-3 md:right-52 right-14 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br font-medium rounded-full text-sm px-1.5 py-1.5 text-center me-2 mb-2 `}>{theme == "dark" ? LightModeIcon : DarkModeIcon}</button>
 
       {/* ---------------------- Animated Get-in-touch button ---------------------- */}
-      <Link onClick={() => { const element = document.querySelector('.parent-contact-card-title'); if (element) { element.scrollIntoView({ behavior: 'instant' }); }}} to="#parent-contact-card-title" className="hidden md:block">
+      <Link to="/contact" className="hidden md:block">
         <Lottie lottieRef={lottieRef} animationData={ContactUsLottie}
           onDOMLoaded={() => {
             if (lottieRef.current) {

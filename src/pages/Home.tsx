@@ -14,6 +14,7 @@ import anime from "animejs/lib/anime.js";
 import ContactForm from "../components/ContactForm";
 import Faqs from "../components/Faqs";
 import 'animate.css';
+import { Link } from "react-router-dom";
 
 interface HomeProps {
   // Add your prop types here
@@ -390,19 +391,19 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
     </h1>
             <p className="mb-8 text-lg text-justify font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">At CherryBerry, our focus is on leveraging technology, innovation, and strategic capital to unlock lasting value and foster sustainable economic growth. We are committed to transforming your digital landscape and empowering your brand for a prosperous future.</p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-              <a href="home#parent-contact-card-title" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+              <Link onClick={() => { const element = document.querySelector('.parent-contact-card-title'); if (element) { element.scrollIntoView({ behavior: 'instant' }); }}} to="home#parent-contact-card-title" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                 Contact us
                 <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 5h12m0 0L9 1m4 4L9 9" />
                 </svg>
-              </a>
+              </Link>
               <a href="about" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                 About us
               </a>
             </div>
           </div>
           <div className="">
-            <iframe className="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl" src="https://player.vimeo.com/video/878701144?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+            <iframe className="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl" src="https://player.vimeo.com/video/888048538?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
           </div>
         </div>
       </section>
@@ -432,7 +433,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           <p className="svg-title mb-8 md:mb-0 px-4 md:px-20 2xl:text-center text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 font-bg">Unlocking digital success: We expertly blend design, strategy, and technology, ensuring your website achieves goals and captivates your audience. 🚀</p>
         </div>
 
-        <div className="bg-inherit md:-translate-y-12 translate-y-0 dark:bg-gray-900">
+        <div className="bg-inherit md:-translate-y-12 translate-y-0 ">
           <img src={`./images/${theme == "dark" ? "dark" : "light"}-svg.webp`} alt="" className="md:hidden" />
           <svg xmlns="http://www.w3.org/2000/svg" className="hidden md:block" version="1.1" viewBox="0 80 800 300"><path d="M40.657691955566406,329.4469299316406C45.339306030273434,323.36621246337893,105.0702442932129,231.81464416503906,118.6845932006836,228.1016387939453C132.2989421081543,224.38863342285157,250.77426956176757,273.6442245483398,267.5635070800781,267.5635070800781C284.35274459838865,261.48278961181643,383.1150848388672,121.59042785644532,398.5052185058594,126.75634765625C413.8953521728516,131.9222674560547,513.6262750244141,350.54109466552734,524.0657348632812,353.66217041015625C534.5051947021484,356.78324615478516,557.7518200683594,185.5007339477539,572.4962158203125,178.77427673339844C587.2406115722656,172.04781951904297,757.9670971679687,237.78773376464844,769.8056640625,241.55455017089844" fill="none" strokeWidth="4" stroke="url(&quot;#SvgjsLinearGradient1002&quot;)" strokeLinecap="round"></path><defs><linearGradient id="SvgjsLinearGradient1002"><stop stopColor="hsl(184, 74%, 44%)" offset="0"></stop><stop stopColor="hsl(332, 87%, 70%)" offset="1"></stop></linearGradient></defs>
             <text x="20" y="340" className={`text-[9.5px] font-bg font-semibold fill-black dark:fill-gray-300 ${Progress > 0 ? "animate__fadeInLeft animate__animated" : "hidden"}`}>Define Goals and Objectives</text>
