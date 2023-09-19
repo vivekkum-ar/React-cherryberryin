@@ -20,7 +20,7 @@ const Carousel = () => {
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         {/* <img width={40} height={40} src="/images/logo.png" alt="" /> */}
-        <InitialsAvatar name="Aarav Sharma"  className='bg-gray-900 rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex'></InitialsAvatar>
+        <InitialsAvatar name="Aarav Sharma"  className='bg-gray-900 text-white rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex'></InitialsAvatar>
 
       </div>
       <h3 className="testimonial-title mt-4">Aarav Sharma
@@ -35,7 +35,7 @@ const Carousel = () => {
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         {/* <img width={40} height={40} src="/images/logo.png" alt="" /> */}
-        <InitialsAvatar name="Riya Kapoor" className="bg-gray-900 rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
+        <InitialsAvatar name="Riya Kapoor" className="bg-gray-900 text-white rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
       </div>
       <h3 className="testimonial-title mt-4">Riya Kapoor
         <small> CEO, BloomTech,</small>
@@ -49,7 +49,7 @@ const Carousel = () => {
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         {/* <img width={40} height={40} src="/images/logo.png" alt="" /> */}
-        <InitialsAvatar name="Arjun Singh" className="bg-gray-900 rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
+        <InitialsAvatar name="Arjun Singh" className="bg-gray-900 text-white rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
       </div>
       <h3 className="testimonial-title mt-4">Arjun Singh
         <small> Director, Innovate Web Solutions, Bangalore</small>
@@ -70,7 +70,7 @@ const Carousel = () => {
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         {/* <img width={40} height={40} src="/images/logo.png" alt="" /> */}
-        <InitialsAvatar name="Neha Patel" className="bg-gray-900 rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
+        <InitialsAvatar name="Neha Patel" className="bg-gray-900 text-white rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
       </div>
       <h3 className="testimonial-title mt-4">Neha Patel
         <small> Co-founder,</small>
@@ -84,7 +84,7 @@ const Carousel = () => {
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         {/* <img width={40} height={40} src="/images/logo.png" alt="" /> */}
-        <InitialsAvatar name="Vikram Verma" className="bg-gray-900 rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
+        <InitialsAvatar name="Vikram Verma" className="bg-gray-900 text-white rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
       </div>
       <h3 className="testimonial-title mt-4">Vikram Verma
         <small> Owner, Infinite Pixels, Pune</small>
@@ -98,7 +98,7 @@ const Carousel = () => {
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         {/* <img width={40} height={40} src="/images/logo.png" alt="" /> */}
-        <InitialsAvatar name="Tanvi Mehta" className="bg-gray-900 rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
+        <InitialsAvatar name="Tanvi Mehta" className="bg-gray-900 text-white rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
       </div>
       <h3 className="testimonial-title mt-4">Tanvi Mehta
         <small> CEO, PixelCrafters, Hyderabad</small>
@@ -119,7 +119,7 @@ const Carousel = () => {
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         {/* <img width={40} height={40} src="/images/logo.png" alt="" /> */}
-        <InitialsAvatar name="Kartik Malhotra" className="bg-gray-900 rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
+        <InitialsAvatar name="Kartik Malhotra" className="bg-gray-900 text-white rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
       </div>
       <h3 className="testimonial-title mt-4">Kartik Malhotra
         <small> Founder, ByteBuilders, Chennai</small>
@@ -133,7 +133,7 @@ const Carousel = () => {
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         {/* <img width={40} height={40} src="/images/logo.png" alt="" /> */}
-        <InitialsAvatar name="Anaya Desai" className="bg-gray-900 rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
+        <InitialsAvatar name="Anaya Desai" className="bg-gray-900 text-white rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
       </div>
       <h3 className="testimonial-title mt-4">Anaya Desai
         <small> CEO, SparkSolutions, Kolkata</small>
@@ -147,7 +147,7 @@ const Carousel = () => {
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         {/* <img width={40} height={40} src="/images/logo.png" alt="" /> */}
-        <InitialsAvatar name="Rahul Jain" className="bg-gray-900 rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
+        <InitialsAvatar name="Rahul Jain" className="bg-gray-900 text-white rounded-full p-4 w-16 h-16 text-center text-xl font-bold self-center justify-center align-middle flex"></InitialsAvatar>
       </div>
       <h3 className="testimonial-title mt-4">Rahul Jain
         <small> Director, CodeWave Technologies, Jaipur</small>
