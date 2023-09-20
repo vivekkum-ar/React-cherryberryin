@@ -8,8 +8,8 @@ interface ContactFormProps {
 
 const ContactForm: React.FC<ContactFormProps> = ({}) => {
 
+  const [Error, setError] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-
 
 /* ----------------------- Fetching secrets from .env ----------------------- */
 const serviceId = import.meta.env.VITE_YOUR_SERVICE_ID;
@@ -32,16 +32,19 @@ if (!serviceId || !templateId || !publicKey) {
       .then((result) => {
           console.log(result.text);
       }, (error) => {
-          console.log(error.text);
+          console.log("EmailJS ERROR: ",error.text);
+          setError(error.text);
       });
     } else {
       console.error("Form ref is not properly set up.");
+      setError("error.text");
     }
       setShowAlert(true);
 
       // Hide the alert after 10 seconds
     setTimeout(() => {
       setShowAlert(false);
+      setError("");
     }, 10000);
 
       // Reset the form after submission
@@ -80,13 +83,13 @@ if (!serviceId || !templateId || !publicKey) {
     <>
      {/* Display the alert if showAlert is true */}
      {showAlert && (
-<div id="" className="fixed z-40 w-84 top-5 items-center p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400 border border-dark-500 " role="alert">
+<div id="" className={`fixed z-40 w-84 top-5 items-center p-4 mb-4 rounded-lg ${Error !== "" ? "text-red-800 bg-red-100 dark:text-red-400" : "text-green-800 bg-green-100 dark:text-green-400"} dark:bg-gray-800 border border-dark-500 `} role="alert">
 
 <div className="align-items-center flex flex-row ms-3 text-sm font-medium">
   <div className="1">
-<strong>✔️ Submitted !</strong> We have received your input, and we'll get back to you. Please check your email. &nbsp;&nbsp;&nbsp;&nbsp;
+<strong>{Error === "" ? "✔️ Submitted !" : "❌ Error !"}</strong> { Error === "" ? "We have received your input, and we'll get back to you. Please check your email. " : "An error occured, and we'll sort it out soon. Please wait while we're working on it. "}
   </div>
-<button type="button" onClick={() => setShowAlert(false)} className=" ms-2 -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700" data-dismiss-target="#alert-3" aria-label="Close">
+<button type="button" onClick={() => setShowAlert(false)} className={` ms-2 -mx-1.5 -my-1.5   rounded-lg focus:ring-2 ${Error === "" ? "bg-green-50 focus:ring-green-400 text-green-500 hover:bg-green-200 dark:text-green-400" : "bg-red-50 focus:ring-red-400 text-red-500 hover:bg-red-200 dark:text-red-400"} p-1.5  inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800  dark:hover:bg-gray-700`} data-dismiss-target="#alert-3" aria-label="Close">
   <span className="sr-only">Close</span>
   <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
