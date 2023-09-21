@@ -5,72 +5,75 @@ import { HomeRoundedIcon, MailIcon, PhoneRoundedIcon, WorkRoundedIcon } from "..
 
 const Contact = () => {
 
+  const [Error, setError] = useState("");
   const [showAlert, setShowAlert] = useState(false);
 
+/* ----------------------- Fetching secrets from .env ----------------------- */
+const serviceId = import.meta.env.VITE_YOUR_SERVICE_ID;
+const templateId = import.meta.env.VITE_YOUR_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_YOUR_PUBLIC_KEY;
 
-  /* ----------------------- Fetching secrets from .env ----------------------- */
-  const serviceId = import.meta.env.VITE_YOUR_SERVICE_ID;
-  const templateId = import.meta.env.VITE_YOUR_TEMPLATE_ID;
-  const publicKey = import.meta.env.VITE_YOUR_PUBLIC_KEY;
-  
-  if (!serviceId || !templateId || !publicKey) {
-    console.error("One or more environment variables are not defined.",showAlert);
-    return;
-  }
-  
-  /* --------------------------- EmailJS starts here -------------------------- */
-    const form = useRef<HTMLFormElement>(null);
-  
-    const sendEmail = (e: React.FormEvent) => {
-      e.preventDefault();
-  
-      if (form.current) {
-      emailjs.sendForm(serviceId, templateId, form.current, publicKey)
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
-      } else {
-        console.error("Form ref is not properly set up.");
-      }
-        setShowAlert(true);
-  
-        // Hide the alert after 10 seconds
-      setTimeout(() => {
-        setShowAlert(false);
-      }, 10000);
-  
-        // Reset the form after submission
-      if (form.current) {
-        form.current.reset();
-      }
-    
-    };
-  
-  /* ----------------------- Form validation starts here ---------------------- */
-    useEffect(() => {
-      "use strict";
-  
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.querySelectorAll(".needs-validation");
-  
-      // Loop over them and prevent submission
-      Array.prototype.slice.call(forms).forEach(function (form) {
-        form.addEventListener(
-          "submit",
-          function (event:any) {
-            if (!form.checkValidity()) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-  
-            form.classList.add("was-validated");
-          },
-          false
-        );
+if (!serviceId || !templateId || !publicKey) {
+  console.error("One or more environment variables are not defined.",showAlert);
+  return;
+}
+
+/* --------------------------- EmailJS starts here -------------------------- */
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (form.current) {
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log("EmailJS ERROR: ",error.text);
+          setError(error.text);
       });
-    }, []);
+    } else {
+      console.error("Form ref is not properly set up.");
+      setError("error.text");
+    }
+      setShowAlert(true);
+
+      // Hide the alert after 10 seconds
+    setTimeout(() => {
+      setShowAlert(false);
+      setError("");
+    }, 10000);
+
+      // Reset the form after submission
+    if (form.current) {
+      form.current.reset();
+    }
+  
+  };
+
+/* ----------------------- Form validation starts here ---------------------- */
+  useEffect(() => {
+    "use strict";
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll(".needs-validation");
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        "submit",
+        function (event:any) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  }, []);
 
   useEffect(() => {
     document.body.style.overflowX = 'hidden';
@@ -88,6 +91,41 @@ useEffect(() => {
 
   return (
     <>
+    {showAlert && (
+<div id="" className={`fixed z-40 w-84 top-5 items-center p-4 mb-4 rounded-lg ${Error !== "" ? "text-red-800 bg-red-100 dark:text-red-400" : "text-green-800 bg-green-100 dark:text-green-400"} dark:bg-gray-800 border border-dark-500 `} role="alert">
+
+<div className="align-items-center flex flex-row ms-3 text-sm font-medium">
+  <div className="1">
+<strong>{Error === "" ? "✔️ Submitted !" : "❌ Error !"}</strong> { Error === "" ? "We have received your input, and we'll get back to you. Please check your email. " : "An error occured, and we'll sort it out soon. Please wait while we're working on it. "}
+  </div>
+<button type="button" onClick={() => setShowAlert(false)} className={` ms-2 -mx-1.5 -my-1.5   rounded-lg focus:ring-2 ${Error === "" ? "bg-green-50 focus:ring-green-400 text-green-500 hover:bg-green-200 dark:text-green-400" : "bg-red-50 focus:ring-red-400 text-red-500 hover:bg-red-200 dark:text-red-400"} p-1.5  inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800  dark:hover:bg-gray-700`} data-dismiss-target="#alert-3" aria-label="Close">
+  <span className="sr-only">Close</span>
+  <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+  </svg>
+</button>
+</div>
+</div>
+
+
+      // <div className="d-flex justify-content-center">
+      // <div className="alert-container">
+      //     <div className="alert alert-success alert-dismissible fade show" role="alert">
+      //       <strong>Submitted !</strong> We have received your input, and we'll get back to you. Please check your email.
+      //       <button
+      //         type="button"
+      //         className="btn-close text-dark fs-2 pe-2 pt-2"
+      //         data-bs-dismiss="alert"
+      //         aria-label="Close"
+      //         onClick={() => setShowAlert(false)}
+      //       >
+      //         X
+      //         </button>
+            
+      //     </div>
+      //   </div>
+      //   </div>
+       )} 
     <div className="max-w-screen-xl mx-auto">
   <div className="grid grid-cols-1 md:grid-cols-12">
     <div className="font-bg bg-gray-900 md:col-span-4 p-10 text-white">
