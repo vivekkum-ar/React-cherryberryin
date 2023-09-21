@@ -24,13 +24,13 @@ const CardofService: React.FC<CardofServiceProps> = ({title,description}) => {
       <div className="space-y-6 pt-1 leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
         <p className='text-xs md:text-base'>{description}</p>
       </div>
-      <div className="pt-1 text-sm md:text-base font-semibold leading-7">
+      {/* <div className="pt-1 text-sm md:text-base font-semibold leading-7">
         <p>
           <a href="#" className="text-sky-500 transition-all duration-300 group-hover:text-white">Read More
             →
           </a>
         </p>
-      </div>
+      </div> */}
     </div>
   </div>
 </div>
