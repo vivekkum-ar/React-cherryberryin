@@ -15,6 +15,8 @@ import ContactForm from "../components/ContactForm";
 import Faqs from "../components/Faqs";
 import 'animate.css';
 import { Link } from "react-router-dom";
+import Helmet from 'react-helmet'
+import favicon from '../assets/favicon.ico';
 
 interface HomeProps {
   // Add your prop types here
@@ -367,6 +369,11 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
   return (
     <>
+    <Helmet>
+        <title>CherryBerry: Home</title>
+        <meta name="description" content="CherryBerry" />
+        <link id="favicon" rel="icon" href={favicon} type="image/x-icon" data-react-helmet="true" />
+    </Helmet>
 {/* ----------------------------- Modal for previewing example sites ----------------------------- */}
 <Modal ModalVisible={ModalVisible} updateModalVisible={setModalVisible} indexOfColl={indexOfColl}></Modal>
 
