@@ -1,27 +1,27 @@
-# React + TypeScript + Vite
+<h1 align="center"> Welcome to the CherryBerry Website Repository! </h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://cherryberry.in/images/logo.png" alt="CherryBerry Logo">
+</p>
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Explore the CherryBerry website repository! This site represents CherryBerry, a web development and design service provider dedicated to creating exceptional online experiences.
 
-## Expanding the ESLint configuration
+## 🌐 Check it out!
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Visit the live website: [CherryBerry](https://cherryberry.in) to discover our services and witness the power of effective web solutions.
 
-- Configure the top-level `parserOptions` property like this:
+## Pages
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+1. **Home:** The landing page introduces CherryBerry's expertise and highlights our services.
+2. **About Us:** Learn about CherryBerry, our history, mission, and vision for delivering top-notch web solutions.
+3. **Services:** Explore our comprehensive services, including web development, design, and more.
+4. **Pricing:** View our showcase of successful projects and client collaborations.
+5. **Contact Us:** Reach out to us for inquiries, feedback, or collaboration opportunities.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## How to Contribute
+
+If you're interested in contributing or have suggestions, consider starring the repository to show your support. Feel free to open issues or submit pull requests. Your contributions are valuable!
+
+Thank you for visiting the CherryBerry GitHub repository. Let's build amazing online experiences together! 🚀💻

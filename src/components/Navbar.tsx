@@ -44,7 +44,7 @@ const Navbar: React.FC<navbarProps> = ({theme,updateTheme}) => {
 
 
   return (
-    <nav className="nav-trigger bg-gray-900 border-b-2 dark:border-gray-300 border-gray-500 dark:bg-gray-900">
+    <nav className="nav-trigger bg-gray-900 border-b-2 dark:border-gray-300 border-gray-500 dark:bg-gray-900 z-50">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between md:justify-center mx-auto px-4 py-1">
         <Link to="/" className="flex items-center">
           <div className="flex m-0 p-0">
