@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import animationData from "../assets/Animation - 1700854622682.json";
 import { Link } from "react-router-dom";
+import Helmet from 'react-helmet'
+import favicon from '../assets/favicon.ico';
 
 const NoPage = () => {
   const lottieRef = useRef<HTMLDivElement>(null);
@@ -29,6 +31,12 @@ const NoPage = () => {
 
   return (
     <>
+    <Helmet>
+        <title>CherryBerry: 404</title>
+        {/* <meta name="description" content="Error" /> */}
+        <link id="favicon" rel="icon" href={favicon} type="image/x-icon" data-react-helmet="true" />
+
+    </Helmet>
     <div className="absolute bottom-20 left-40 z-40">
     <Link to="/home" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                 Go to Home

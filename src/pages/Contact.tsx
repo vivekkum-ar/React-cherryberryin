@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import { HomeRoundedIcon, MailIcon, PhoneRoundedIcon, WorkRoundedIcon } from "../components/iconify";
+import Helmet from 'react-helmet'
+import favicon from '../assets/favicon.ico';
 
 const Contact = () => {
 
@@ -91,6 +93,14 @@ useEffect(() => {
 
   return (
     <>
+    <Helmet>
+        <title>CherryBerry: Contact</title>
+        <meta name="description" content="Reach Out to Us – Your Gateway to Seamless Collaboration and Unparalleled Excellence.
+Address: Vishal Nagar, DP Road, Pune, Bharat - 411027
+Phone: +91 8788167039" />
+        <link id="favicon" rel="icon" href={favicon} type="image/x-icon" data-react-helmet="true" />
+
+    </Helmet>
     {showAlert && (
 <div id="" className={`fixed z-40 w-84 top-5 items-center p-4 mb-4 rounded-lg ${Error !== "" ? "text-red-800 bg-red-100 dark:text-red-400" : "text-green-800 bg-green-100 dark:text-green-400"} dark:bg-gray-800 border border-dark-500 `} role="alert">
 

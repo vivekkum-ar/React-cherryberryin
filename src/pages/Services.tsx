@@ -5,7 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from 'react-router-dom';
 gsap.registerPlugin(ScrollTrigger);
-
+import Helmet from 'react-helmet'
+import favicon from '../assets/favicon.ico';
 
 interface ServicesProps {
   // Add your prop types here
@@ -80,6 +81,12 @@ const Services: React.FC<ServicesProps> = ({}) => {
 
   return (
     <>
+    <Helmet>
+        <title>CherryBerry: Services</title>
+        <meta name="description" content="Craft stunning websites and powerful online experiences effortlessly. CherryBerry empowers your brand with speed, creativity, and unparalleled innovation, making your digital journey extraordinary." />
+        <link id="favicon" rel="icon" href={favicon} type="image/x-icon" data-react-helmet="true" />
+
+    </Helmet>
       <div className="mx-auto my-10 flex justify-center px-4 sm:my-12 sm:px-6 md:my-8 lg:my-10 lg:px-8 xl:my-14">
   <div className="text-center ">
     <h1 className="text-4xl font-bg font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">

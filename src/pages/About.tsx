@@ -2,6 +2,8 @@ import Carousel from "../components/Carousel";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useLayoutEffect } from "react";
+import { Helmet } from "react-helmet";
+import favicon from "../assets/favicon.ico";
 import { Link } from 'react-router-dom';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,6 +131,12 @@ useLayoutEffect(() => {
 
   return (
     <>
+    <Helmet>
+        <title>CherryBerry: About</title>
+        <meta name="description" content="Our story, values, and commitment to delivering innovative digital solutions tailored to elevate your online presence and success." />
+        <link id="favicon" rel="icon" href={favicon} type="image/x-icon" data-react-helmet="true" />
+
+    </Helmet>
     <div className="sm:flex md:flex-row-reverse items-center max-w-screen-xl mx-auto">
   
   <div className="sm:w-1/2 p-5 md:order-1 order-1">

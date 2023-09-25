@@ -371,7 +371,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
     <>
     <Helmet>
         <title>CherryBerry: Home</title>
-        <meta name="description" content="CherryBerry" />
+        <meta name="description" content="From start to success with our comprehensive guides and tools. Build, grow, and thrive with expert assistance every step of the way." />
         <link id="favicon" rel="icon" href={favicon} type="image/x-icon" data-react-helmet="true" />
     </Helmet>
 {/* ----------------------------- Modal for previewing example sites ----------------------------- */}
